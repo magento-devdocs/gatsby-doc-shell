@@ -1,2 +1,3 @@
-# gatsby-doc-site
-A documentation site built on top of Gatsby
+# Gatsby Doc Site project
+
+A documentation site template built on top of Gatsby.
