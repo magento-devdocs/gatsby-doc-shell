@@ -7,6 +7,11 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
+    "@spectrum-css/button": "^2.0.2",
+    "@spectrum-css/icon": "^2.0.2",
+    "@spectrum-css/page": "^2.0.2",
+    "@spectrum-css/typography": "^2.0.2",
+    "@spectrum-css/vars": "^2.0.2",
     "gatsby": "^2.18.4",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-manifest": "^2.2.30",

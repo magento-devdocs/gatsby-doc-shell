@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "../Header"
-
+import Provider from "../Provider"
 import defaultStyles from "./app.module.css"
 
 const App = props => {
@@ -22,15 +22,17 @@ const App = props => {
   const siteTitle = title || data.site.siteMetadata.title
 
   return (
-    <div className={defaultStyles.root}>
-      <Header siteTitle={siteTitle} />
-      <div className={defaultStyles.content}>
-        <section>Left sidebar</section>
-        <main>{children}</main>
-        <section>Right sidebar</section>
+    <Provider size="medium" theme="light">
+      <div className={defaultStyles.root}>
+        <Header siteTitle={siteTitle} />
+        <div className={defaultStyles.content}>
+          <section>Left sidebar</section>
+          <main>{children}</main>
+          <section>Right sidebar</section>
+        </div>
+        <footer>Footer content</footer>
       </div>
-      <footer>Footer content</footer>
-    </div>
+    </Provider>
   )
 }
 
