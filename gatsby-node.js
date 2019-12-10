@@ -40,7 +40,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path: node.fields.slug,
       context: { id: node.id  },
-      component: path.resolve(`./src/components/mdx-page.js`)
+      component: path.resolve(`./src/layouts/MdxLayout/mdxLayout.js`)
     })
   })
 }
