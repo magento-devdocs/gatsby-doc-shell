@@ -1,0 +1,12 @@
+.root {
+    height: 75px;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+}
+
+.linkContainer {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+}

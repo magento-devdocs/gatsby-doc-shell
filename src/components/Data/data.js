@@ -29,6 +29,14 @@ const DataProvider = props => {
           }
         }
       }
+      footerData: dataYaml(name: { eq: "Footer" }) {
+        name
+        copyrightYear
+        links {
+          name
+          url
+        }
+      }
     }
   `)
 

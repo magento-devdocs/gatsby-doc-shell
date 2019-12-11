@@ -1,0 +1,13 @@
+name: Footer
+
+links:
+  - name: Privacy Policy
+    url: http://magento.com/legal/terms/privacy/
+  - name: Terms of Service
+    url: http://magento.com/legal/terms/
+  - name: License/Trademark FAQ
+    url: http://magento.com/legal/licensing/
+  - name: "#pwa Slack channel"
+    url: https://magentocommeng.slack.com/messages/C71HNKYS2
+
+copyrightYear: 2019
