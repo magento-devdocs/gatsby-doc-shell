@@ -1,4 +1,7 @@
+order: 3
+title: Section Three
 name: section-3
+url: /nested/page/
 pages:
   - title: Nested page
     url: /nested/page/

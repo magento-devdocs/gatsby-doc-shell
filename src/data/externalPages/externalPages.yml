@@ -1,0 +1,26 @@
+- title: Developer
+  name: developer
+  sites:
+    - title: Commerce Developer Documentation
+      link: https://devdocs.magento.com/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce%20Developer%20Documentation&_ga=2.6114675.1578125461.1575992109-502516606.1564676930
+
+    - title: PWA Studio
+      link: http://pwastudio.io/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=PWA%20Studio
+
+    - title: Order Management
+      link: https://omsdocs.magento.com/en/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order%20Management&_ga=2.6114675.1578125461.1575992109-502516606.1564676930
+
+- title: Merchant
+  name: merchant
+  sites:
+    - title: Commerce User Guide
+      link: https://docs.magento.com/m2/ee/user_guide/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Commerce%20User%20Guide&_ga=2.242621890.1578125461.1575992109-502516606.1564676930
+
+    - title: Order Management
+      link: https://omsdocs.magento.com/en/userguides/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Order%20Management&_ga=2.242621890.1578125461.1575992109-502516606.1564676930
+
+    - title: Business Intelligence
+      link: https://docs.magento.com/mbi/?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Business%20Intelligence&_ga=2.6114675.1578125461.1575992109-502516606.1564676930
+
+    - title: Marketplace
+      link: https://docs.magento.com/marketplace/user_guide/getting-started.html?itm_source=pwa-devdocs&itm_medium=top_nav&itm_campaign=app_switcher&itm_term=Marketplace&_ga=2.6114675.1578125461.1575992109-502516606.1564676930

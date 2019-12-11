@@ -4,6 +4,7 @@ import React from "react"
 import Home from "./home"
 import Search from "../Search"
 import TabNavigation from "../TabNavigation"
+import WaffleNavigation from "../WaffleNavigation"
 
 import defaultStyles from "./header.module.css"
 
@@ -14,7 +15,7 @@ const Header = ({ siteTitle, slug }) => {
       <Home to="/" />
       <TabNavigation slug={slug} />
       <div>{siteTitle}</div>
-      <div>Waffle menu</div>
+      <WaffleNavigation />
       <Search />
     </header>
   )

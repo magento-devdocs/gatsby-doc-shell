@@ -18,21 +18,24 @@ import "@spectrum-css/vars/dist/spectrum-darkest.css"
 import "@spectrum-css/page/dist/index-vars.css"
 import "@spectrum-css/typography/dist/index-vars.css"
 
-const Provider = props => {
+/**
+ * A component that imports and applies necessary global styles for spectrum-css
+ */
+const GlobalSpectrumProvider = props => {
   const { children, theme, size } = props
   const className = `spectrum spectrum--${size} spectrum--${theme}`
   return <div className={className}>{children}</div>
 }
 
-Provider.propTypes = {
+GlobalSpectrumProvider.propTypes = {
   theme: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 }
 
-Provider.defaultProps = {
+GlobalSpectrumProvider.defaultProps = {
   size: "large",
   theme: "dark",
 }
 
-export default Provider
+export default GlobalSpectrumProvider

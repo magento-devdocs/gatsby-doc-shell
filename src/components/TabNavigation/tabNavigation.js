@@ -1,8 +1,6 @@
 import React from "react"
 
-import pageGroup from "../../data/pageGroups.yml"
-
-import { usePageGroups } from "../PageGroups"
+import { useData } from "../Data"
 
 import { navigate } from "gatsby"
 
@@ -20,11 +18,10 @@ const classes = {
 const TabNavigation = props => {
   const { slug } = props
 
-  const pageGroups = usePageGroups()
+  const { pageGroups } = useData()
 
   let currentGroup = slug
-
-  pageGroups.forEach(group => {
+  pageGroups.nodes.forEach(group => {
     const found = group.pages.find(page => {
       return page.url === slug
     })
@@ -34,36 +31,38 @@ const TabNavigation = props => {
     }
   })
 
-  const tabs = pageGroup.groups.map(tab => {
-    const currentlySelected = currentGroup === tab.name
-    const tabClass = currentlySelected ? classes.selected : classes.listItem
+  const tabs = pageGroups.nodes
+    .sort((a, b) => a.order - b.order)
+    .map(tab => {
+      const currentlySelected = currentGroup === tab.name
+      const tabClass = currentlySelected ? classes.selected : classes.listItem
 
-    const indicator = currentlySelected ? (
-      <div className={classes.indicator} style={{ width: "75%" }} />
-    ) : (
-      undefined
-    )
+      const indicator = currentlySelected ? (
+        <div className={classes.indicator} style={{ width: "75%" }} />
+      ) : (
+        undefined
+      )
 
-    const clickAction = () => {
-      if (!currentlySelected) {
-        navigate(tab.url)
+      const clickAction = () => {
+        if (!currentlySelected) {
+          navigate(tab.url)
+        }
       }
-    }
 
-    return (
-      <div
-        key={tab.name}
-        className={tabClass}
-        tabIndex="0"
-        onClick={clickAction}
-        onKeyPress={clickAction}
-        role="button"
-      >
-        <label className={classes.label}>{tab.title}</label>
-        {indicator}
-      </div>
-    )
-  })
+      return (
+        <div
+          key={tab.name}
+          className={tabClass}
+          tabIndex="0"
+          onClick={clickAction}
+          onKeyPress={clickAction}
+          role="button"
+        >
+          <label className={classes.label}>{tab.title}</label>
+          {indicator}
+        </div>
+      )
+    })
 
   return <div className={classes.list}>{tabs}</div>
 }

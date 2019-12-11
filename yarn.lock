@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@adobe/spectrum-css-workflow-icons@^1.0.0":
+  version "1.0.0"
+  resolved "https://artifactory.corp.adobe.com:443/artifactory/api/npm/npm-adobe-release/@adobe/spectrum-css-workflow-icons/-/spectrum-css-workflow-icons-1.0.0.tgz#913f3a251ef5ea3154929a7a23d4fbd6de1553da"
+  integrity sha1-kT86JR716jFUkpp6I9T71t4VU9o=
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
@@ -1203,8 +1208,13 @@
 
 "@spectrum-css/link@^2.0.2":
   version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@spectrum-css/link/-/link-2.0.2.tgz#577499c9ef7d7e53c3c2893f358bbe3766c3c2e9"
-  integrity sha512-XxG93Wr3N6puLuJszxz9xa+UdaO8QfX/pAl+vopPRdZsAr6LNd2dYIua6uEjF3u9/osUNuQzvFU+1drrLICtEw==
+  resolved "https://artifactory.corp.adobe.com:443/artifactory/api/npm/npm-adobe-release/@spectrum-css/link/-/link-2.0.2.tgz#577499c9ef7d7e53c3c2893f358bbe3766c3c2e9"
+  integrity sha1-V3SZye99flPDwok/NYu+N2bDwuk=
+
+"@spectrum-css/menu@^2.1.1":
+  version "2.1.1"
+  resolved "https://artifactory.corp.adobe.com:443/artifactory/api/npm/npm-adobe-release/@spectrum-css/menu/-/menu-2.1.1.tgz#aad7a8402785575d14b003b5ff094f1598959a59"
+  integrity sha1-qteoQCeFV10UsAO1/wlPFZiVmlk=
 
 "@spectrum-css/page@^2.0.2":
   version "2.0.2"
@@ -1212,6 +1222,11 @@
   integrity sha512-fNP5wH80o8rZAoAasIpxUxS5njLYDhaJr8kt1QUhN22pkwJEj575/dsRqei8EwDBh/zgILmXTK8UHGQwEKDL5w==
   dependencies:
     "@spectrum-css/vars" "^2.0.2"
+
+"@spectrum-css/popover@^2.0.2":
+  version "2.0.2"
+  resolved "https://artifactory.corp.adobe.com:443/artifactory/api/npm/npm-adobe-release/@spectrum-css/popover/-/popover-2.0.2.tgz#a91ad779914a4546d8cf3234ffd2b96dc075f38d"
+  integrity sha1-qRrXeZFKRUbYzzI0/9K5bcB1840=
 
 "@spectrum-css/search@^2.0.0":
   version "2.0.2"

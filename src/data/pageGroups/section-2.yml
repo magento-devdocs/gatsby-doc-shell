@@ -1,4 +1,7 @@
+order: 2
+title: Section Two
 name: section-2
+url: /example/
 pages:
   - title: Example
     url: /example/

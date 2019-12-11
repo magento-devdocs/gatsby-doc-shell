@@ -1,7 +1,10 @@
+order: 1
+title: Section One
 name: section-1
+url: /
 pages:
   - title: Home
     url: /
-  
+
   - title: Page 2
     url: /page-2/
