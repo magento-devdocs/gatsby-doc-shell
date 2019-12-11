@@ -53,5 +53,8 @@ module.exports = {
         path: `${__dirname}/src/markdown-pages`,
       },
     },
+    {
+      resolve: "gatsby-plugin-react-svg",
+    },
   ],
 }

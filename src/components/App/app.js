@@ -22,7 +22,7 @@ const App = props => {
   const siteTitle = title || data.site.siteMetadata.title
 
   return (
-    <Provider size="medium" theme="light">
+    <Provider>
       <div className={defaultStyles.root}>
         <Header siteTitle={siteTitle} />
         <div className={defaultStyles.content}>

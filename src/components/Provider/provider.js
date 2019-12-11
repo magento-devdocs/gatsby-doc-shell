@@ -2,12 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 
 // Global imports for spectrum
-import "@spectrum-css/page/dist/index-vars.css"
-import "@spectrum-css/typography/dist/index-vars.css"
-import "@spectrum-css/icon/dist/index-vars.css"
+import "@spectrum-css/vars/dist/spectrum-global.css"
 
 // Sizing vars
-import "@spectrum-css/vars/dist/spectrum-global.css"
 import "@spectrum-css/vars/dist/spectrum-medium.css"
 import "@spectrum-css/vars/dist/spectrum-large.css"
 
@@ -16,6 +13,10 @@ import "@spectrum-css/vars/dist/spectrum-lightest.css"
 import "@spectrum-css/vars/dist/spectrum-light.css"
 import "@spectrum-css/vars/dist/spectrum-dark.css"
 import "@spectrum-css/vars/dist/spectrum-darkest.css"
+
+// Component vars
+import "@spectrum-css/page/dist/index-vars.css"
+import "@spectrum-css/typography/dist/index-vars.css"
 
 const Provider = props => {
   const { children, theme, size } = props
@@ -30,8 +31,8 @@ Provider.propTypes = {
 }
 
 Provider.defaultProps = {
-  size: "medium",
-  theme: "light",
+  size: "large",
+  theme: "dark",
 }
 
 export default Provider
