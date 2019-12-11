@@ -32,10 +32,19 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`, `.md`],
-      }
+       resolve: `gatsby-plugin-mdx`,
+       options: {
+         extensions: [`.mdx`, `.md`],
+         gatsbyRemarkPlugins: [
+           {
+             resolve: `gatsby-remark-images`,
+             options: {
+               maxWidth: 590,
+             },
+           },
+         ],
+         plugins: ['gatsby-remark-images'],
+       },
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -43,6 +52,6 @@ module.exports = {
         name: "posts",
         path: `${__dirname}/src/markdown-pages`,
       },
-    }
+    },
   ],
 }
