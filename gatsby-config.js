@@ -56,5 +56,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-react-svg",
     },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts",
+        path: `${__dirname}/src/data`,
+      },
+    }
   ],
 }

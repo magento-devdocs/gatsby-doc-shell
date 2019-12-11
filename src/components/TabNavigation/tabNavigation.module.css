@@ -1,0 +1,25 @@
+.root {
+    display: grid;
+    align-self: stretch
+}
+
+.list {
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    align-items: center;
+}
+
+.listItem {
+    margin: 5px 10px; 
+}
+
+.selectedItem {
+    composes: listItem;
+    color: red;
+}
+
+.link {
+    text-decoration: none;
+}

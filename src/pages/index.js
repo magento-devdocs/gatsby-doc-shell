@@ -9,7 +9,7 @@ const IndexPage = () => {
   const title = "Home"
 
   return (
-    <PageLayout title={title}>
+    <PageLayout title={title} slug="/">
       <h1>Gatsby Documentation Site</h1>
       <p>Welcome to the Gatsby documentation site</p>
       <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>

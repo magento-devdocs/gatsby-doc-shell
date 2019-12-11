@@ -6,6 +6,8 @@ import Header from "../Header"
 import Provider from "../Provider"
 import defaultStyles from "./app.module.css"
 
+import { PageGroupsProvider } from "../PageGroups"
+
 const App = props => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -17,22 +19,24 @@ const App = props => {
     }
   `)
 
-  const { title, children } = props
+  const { title, slug, children } = props
 
   const siteTitle = title || data.site.siteMetadata.title
 
   return (
-    <Provider>
-      <div className={defaultStyles.root}>
-        <Header siteTitle={siteTitle} />
-        <div className={defaultStyles.content}>
-          <section>Left sidebar</section>
-          <main>{children}</main>
-          <section>Right sidebar</section>
+    <PageGroupsProvider>
+      <Provider size="medium" theme="light">
+        <div className={defaultStyles.root}>
+          <Header siteTitle={siteTitle} slug={slug} />
+          <div className={defaultStyles.content}>
+            <section>Left sidebar</section>
+            <main>{children}</main>
+            <section>Right sidebar</section>
+          </div>
+          <footer>Footer content</footer>
         </div>
-        <footer>Footer content</footer>
-      </div>
-    </Provider>
+      </Provider>
+    </PageGroupsProvider>
   )
 }
 

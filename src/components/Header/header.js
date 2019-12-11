@@ -3,14 +3,16 @@ import React from "react"
 
 import Home from "./home"
 import Search from "../Search"
+import TabNavigation from "../TabNavigation"
 
 import defaultStyles from "./header.module.css"
 
-const Header = ({ siteTitle }) => {
+const Header = ({ siteTitle, slug }) => {
+  const classNames = [defaultStyles.root, "spectrum--dark"]
   return (
-    <header className={defaultStyles.root}>
+    <header className={classNames.join(" ")}>
       <Home to="/" />
-      <div>Tabs Content</div>
+      <TabNavigation slug={slug} />
       <div>{siteTitle}</div>
       <div>Waffle menu</div>
       <Search />

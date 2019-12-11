@@ -1,0 +1,7 @@
+name: section-2
+pages:
+  - title: Example
+    url: /example/
+
+  - title: Normal markdown
+    url: /normal-markdown/

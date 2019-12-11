@@ -1,0 +1,4 @@
+name: section-3
+pages:
+  - title: Nested page
+    url: /nested/page/

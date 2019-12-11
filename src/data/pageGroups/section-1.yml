@@ -1,0 +1,7 @@
+name: section-1
+pages:
+  - title: Home
+    url: /
+  
+  - title: Page 2
+    url: /page-2/
