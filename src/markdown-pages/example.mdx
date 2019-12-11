@@ -1,3 +1,5 @@
+import GlobalVariable from "DocComponents/GlobalVariable"
+
 # Example
 
 _This is a temporary page for testing MDX page creation._
@@ -6,3 +8,11 @@ _This is a temporary page for testing MDX page creation._
 - List item 2
 - List item 3
 - List item 4
+
+Current version: <GlobalVariable name='version'/> version
+
+Example variable: <GlobalVariable>exampleVariable</GlobalVariable>
+
+Name prop takes precedence over inner tag content:
+
+<GlobalVariable name="version">exampleVariable</GlobalVariable>

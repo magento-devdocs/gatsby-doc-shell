@@ -44,3 +44,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 }
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        DocComponents: path.resolve(__dirname, 'src/doc-components/')
+      }
+    }
+  })
+}
