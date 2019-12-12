@@ -20,7 +20,11 @@ const MdxLayout = props => {
   return (
     <>
       <SEO title={mdx.frontmatter.title} />
-      <App title={mdx.frontmatter.title} slug={mdx.fields.slug}>
+      <App
+        title={mdx.frontmatter.title}
+        slug={mdx.fields.slug}
+        currentPageContents={mdx.tableOfContents.items}
+      >
         <MDXProvider components={shortCodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
@@ -40,6 +44,7 @@ export const pageQuery = graphql`
       fields {
         slug
       }
+      tableOfContents
     }
   }
 `

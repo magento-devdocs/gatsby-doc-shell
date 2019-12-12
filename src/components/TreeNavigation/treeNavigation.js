@@ -1,12 +1,12 @@
 import React from "react"
-
-import "@spectrum-css/sidenav"
-
-import { useData } from "../Data"
-
 import { Link } from "gatsby"
 
+import { useData } from "../Data"
 import getPageGroup from "../util/getPageGroup"
+
+import defaultClasses from "./treeNavigation.module.css"
+
+import "@spectrum-css/sidenav"
 
 const classes = {
   list: "spectrum-SideNav spectrum-SideNav--multiLevel",
@@ -24,7 +24,7 @@ const TreeNavigation = props => {
 
   if (group) {
     return (
-      <nav>
+      <nav className={defaultClasses.root}>
         <Branch slug={slug} pageTree={group} rootClass={classes.list} />
       </nav>
     )
