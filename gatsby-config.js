@@ -45,6 +45,12 @@ module.exports = {
               maxWidth: 590,
             },
           },
+          {
+            resolve: `gatsby-remark-check-links`,
+            options: {
+              verbose: false
+            }
+          },
         ],
         plugins: ["gatsby-remark-images"],
       },
