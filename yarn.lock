@@ -1238,6 +1238,11 @@
   resolved "https://registry.yarnpkg.com/@spectrum-css/search/-/search-2.0.2.tgz#c80df0207f9ebee7ebd5700c311e7e842a4871cf"
   integrity sha512-abS1CxEapqLTYCvUSNXWvEnSrFZ7jTY/0LDeffj5iLBBA5kXpuuoNzkQ/K3d3yGoNn2VPnEEwPnZTDS+RfFhQg==
 
+"@spectrum-css/sidenav@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@spectrum-css/sidenav/-/sidenav-2.0.0.tgz#d5a2e9ee5c42fe3a11e4451aaeaf305a4e879212"
+  integrity sha512-2tT1jfA9tpW4zZZbzrLdk8tQVscSlzbWS85gX9OFxHMT2VzUzQ45LJZVjNj98FenRN5mMpHaibsg4btIltdrrw==
+
 "@spectrum-css/tabs@2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@spectrum-css/tabs/-/tabs-2.0.0.tgz#1426eb9e36b8f6131c36be15bd1093e5e62f9a9e"

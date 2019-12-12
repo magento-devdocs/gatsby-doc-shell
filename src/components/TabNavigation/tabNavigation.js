@@ -6,6 +6,8 @@ import { navigate } from "gatsby"
 
 import "@spectrum-css/tabs"
 
+import getPageGroup from "../util/getPageGroup"
+
 const classes = {
   list:
     "spectrum-Tabs spectrum-Tabs--horizontal spectrum-Tabs--compact spectrum-Tabs--quiet",
@@ -20,21 +22,14 @@ const TabNavigation = props => {
 
   const { pageGroups } = useData()
 
-  let currentGroup = slug
-  pageGroups.nodes.forEach(group => {
-    const found = group.pages.find(page => {
-      return page.url === slug
-    })
-
-    if (found) {
-      currentGroup = group.name
-    }
-  })
+  let currentGroup = getPageGroup(slug, pageGroups)
 
   const tabs = pageGroups.nodes
     .sort((a, b) => a.order - b.order)
     .map(tab => {
-      const currentlySelected = currentGroup === tab.name
+      const currentlySelected = currentGroup
+        ? currentGroup.name === tab.name
+        : false
       const tabClass = currentlySelected ? classes.selected : classes.listItem
 
       const indicator = currentlySelected ? (

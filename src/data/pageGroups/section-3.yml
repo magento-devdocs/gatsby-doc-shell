@@ -5,3 +5,5 @@ url: /nested/page/
 pages:
   - title: Nested page
     url: /nested/page/
+  - title: Variables
+    url: /variables/

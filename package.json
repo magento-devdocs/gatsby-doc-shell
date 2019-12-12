@@ -16,6 +16,7 @@
     "@spectrum-css/page": "^2.0.2",
     "@spectrum-css/popover": "^2.0.2",
     "@spectrum-css/search": "^2.0.0",
+    "@spectrum-css/sidenav": "2.0.0",
     "@spectrum-css/tabs": "2.0.0",
     "@spectrum-css/textfield": "^2.0.2",
     "@spectrum-css/typography": "^2.0.2",

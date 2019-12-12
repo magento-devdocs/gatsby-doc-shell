@@ -16,6 +16,14 @@ const DataProvider = props => {
           pages {
             title
             url
+            pages {
+              title
+              url
+              pages {
+                title
+                url
+              }
+            }
           }
         }
       }

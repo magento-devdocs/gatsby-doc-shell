@@ -8,3 +8,9 @@ pages:
 
   - title: Page 2
     url: /page-2/
+    pages:
+      - title: Import MDX
+        url: /import-mdx/
+        pages:
+          - title: Callouts
+            url: /callouts/

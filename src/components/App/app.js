@@ -8,6 +8,7 @@ import GlobalSpectrumProvider from "../GlobalSpectrumProvider"
 import Header from "../Header"
 
 import defaultStyles from "./app.module.css"
+import TreeNavigation from "../TreeNavigation"
 
 const App = props => {
   const data = useStaticQuery(graphql`
@@ -30,7 +31,9 @@ const App = props => {
         <div className={defaultStyles.root}>
           <Header siteTitle={siteTitle} slug={slug} />
           <div className={defaultStyles.content}>
-            <section>Left sidebar</section>
+            <section>
+              <TreeNavigation slug={slug} />
+            </section>
             <main>{children}</main>
             <section>Right sidebar</section>
           </div>
