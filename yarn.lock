@@ -1196,6 +1196,11 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
+"@spectrum-css/alert@^2.0.2":
+  version "2.0.2"
+  resolved "https://artifactory.corp.adobe.com:443/artifactory/api/npm/npm-adobe-release/@spectrum-css/alert/-/alert-2.0.2.tgz#40e330fc3334435afc4886dce49d9b5111ba8fdc"
+  integrity sha1-QOMw/DM0Q1r8SIbc5J2bURG6j9w=
+
 "@spectrum-css/button@^2.0.2":
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/@spectrum-css/button/-/button-2.0.2.tgz#ad4a3375ab0aec032cc4e23c2ded2eccf49f086c"

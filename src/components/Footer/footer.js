@@ -17,7 +17,7 @@ const Footer = props => {
 
   const linkList = links.map(link => {
     return (
-      <span>
+      <span key={link.name}>
         <a className={classes.link} href={link.url}>
           {link.name}
         </a>

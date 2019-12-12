@@ -15,8 +15,8 @@ import "@spectrum-css/vars/dist/spectrum-dark.css"
 import "@spectrum-css/vars/dist/spectrum-darkest.css"
 
 // Component vars
-import "@spectrum-css/page/dist/index-vars.css"
-import "@spectrum-css/typography/dist/index-vars.css"
+import "@spectrum-css/page"
+import "@spectrum-css/typography"
 
 /**
  * A component that imports and applies necessary global styles for spectrum-css

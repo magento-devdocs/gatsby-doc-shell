@@ -2,11 +2,17 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXProvider } from "@mdx-js/react"
 
 import App from "../../components/App"
 import SEO from "../../components/seo"
 
+import Callout from "../../doc-components/Callout"
+import GlobalVariable from "../../doc-components/GlobalVariable"
+
 import "../global.css"
+
+const shortCodes = { Callout, GlobalVariable }
 
 const MdxLayout = props => {
   const { data } = props
@@ -15,7 +21,9 @@ const MdxLayout = props => {
     <>
       <SEO title={mdx.frontmatter.title} />
       <App title={mdx.frontmatter.title} slug={mdx.fields.slug}>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
+        <MDXProvider components={shortCodes}>
+          <MDXRenderer>{mdx.body}</MDXRenderer>
+        </MDXProvider>
       </App>
     </>
   )

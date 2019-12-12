@@ -2,12 +2,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "../Header"
-import GlobalSpectrumProvider from "../GlobalSpectrumProvider"
-import Footer from "../Footer"
-import defaultStyles from "./app.module.css"
-
 import { DataProvider } from "../Data"
+import Footer from "../Footer"
+import GlobalSpectrumProvider from "../GlobalSpectrumProvider"
+import Header from "../Header"
+
+import defaultStyles from "./app.module.css"
 
 const App = props => {
   const data = useStaticQuery(graphql`
