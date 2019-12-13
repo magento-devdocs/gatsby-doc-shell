@@ -6,6 +6,8 @@ import { DataProvider } from "../Data"
 import Footer from "../Footer"
 import GlobalSpectrumProvider from "../GlobalSpectrumProvider"
 import Header from "../Header"
+import Home from "../Home"
+import Search from "../Search"
 
 import defaultStyles from "./app.module.css"
 import TreeNavigation from "../TreeNavigation"
@@ -30,15 +32,20 @@ const App = props => {
     <DataProvider>
       <GlobalSpectrumProvider size="medium" theme="light">
         <div className={defaultStyles.root}>
-          <Header siteTitle={siteTitle} slug={slug} />
+          <section className={defaultStyles.sidebar}>
+            <Home title={data.site.siteMetadata.title} to="/" />
+            <Search />
+            <TreeNavigation slug={slug} />
+          </section>
+          <div className={defaultStyles.gap} />
           <div className={defaultStyles.content}>
-            <section>
-              <TreeNavigation slug={slug} />
-            </section>
-            <main>{children}</main>
-            <section>
-              <TableOfContents data={currentPageContents} />
-            </section>
+            <Header siteTitle={siteTitle} slug={slug} />
+            <div className={defaultStyles.topicContent}>
+              <main className={defaultStyles.main}>{children}</main>
+              <section>
+                <TableOfContents data={currentPageContents} />
+              </section>
+            </div>
           </div>
           <Footer />
         </div>

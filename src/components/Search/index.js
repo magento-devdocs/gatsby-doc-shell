@@ -10,6 +10,15 @@ import "@spectrum-css/button"
 import Magnifier from "@spectrum-css/icon/combined/Magnifier.svg"
 import CrossSmall from "@spectrum-css/icon/combined/CrossSmall.svg"
 
+import defaultClasses from "./search.module.css"
+
+const classes = {
+  root: `spectrum-Search ${defaultClasses.root}`,
+  input: `spectrum-Search-input spectrum-Textfield ${defaultClasses.inputField}`,
+  magnifier: `spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon ${defaultClasses.magnifier}`,
+  clear: `spectrum-ClearButton ${defaultClasses.clear}`,
+}
+
 const Search = props => {
   const inputElement = useRef(null)
 
@@ -24,24 +33,20 @@ const Search = props => {
   }, [])
 
   return (
-    <form className="spectrum-Search" onSubmit={handleSubmit}>
+    <form className={classes.root} onSubmit={handleSubmit}>
       <input
         ref={inputElement}
         type="search"
         placeholder="Search"
         name="search"
-        className="spectrum-Search-input spectrum-Textfield"
+        className={classes.input}
       />
       <Magnifier
-        className="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+        className={classes.magnifier}
         focusable="false"
         aria-hidden="true"
       />
-      <button
-        type="reset"
-        className="spectrum-ClearButton"
-        onClick={handleClear}
-      >
+      <button type="reset" className={classes.clear} onClick={handleClear}>
         <CrossSmall
           className="spectrum-Icon spectrum-UIIcon-CrossSmall"
           focusable="false"

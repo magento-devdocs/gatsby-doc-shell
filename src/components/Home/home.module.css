@@ -1,0 +1,22 @@
+.root {
+    text-align: center;
+    display: grid;
+    grid-template-columns: 48px auto;
+    grid-auto-flow: column;
+    justify-items: stretch;
+    align-items: center;
+}
+
+.link {
+    justify-self: center;
+}
+
+.image {
+    width: 30px;
+}
+
+.siteName {
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: bold;
+}

@@ -1,4 +1,6 @@
 .root {
+    grid-row: footer;
+    grid-column: sidebar / 4;
     height: 75px;
     align-items: center;
     justify-items: center;

@@ -48,7 +48,7 @@ const WaffleNavigation = props => {
     })
 
     return (
-      <ul className="spectrum-Menu" key={category.name}>
+      <ul className={`spectrum-Menu ${classes.menu}`} key={category.name}>
         <li role="presentation">
           <span
             className="spectrum-Menu-sectionHeading"
@@ -70,15 +70,15 @@ const WaffleNavigation = props => {
   })
 
   const popoverClass = open
-    ? `${classes.root} spectrum-Popover is-open`
-    : `${classes.root} spectrum-Popover`
+    ? `${classes.popover} spectrum-Popover is-open`
+    : `${classes.popover} spectrum-Popover`
 
   const dropdown = open ? (
     <div className={popoverClass}>{categories}</div>
   ) : null
 
   return (
-    <div ref={actionButton}>
+    <div className={classes.root} ref={actionButton}>
       <button
         className="spectrum-ActionButton spectrum-ActionButton--quiet"
         onClick={handleToggle}

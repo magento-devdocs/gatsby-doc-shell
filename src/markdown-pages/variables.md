@@ -16,7 +16,7 @@ Setting a global variable saves global search and replaces later. Declare global
 
 1. Import the global variable list into your topic.
 
-   ```gfm
+   ```md
    import GlobalVariable from "DocComponents/GlobalVariable"
    ```
 

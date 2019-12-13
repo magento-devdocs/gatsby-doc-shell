@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: `/gatsby-doc-site`,
   siteMetadata: {
-    title: `Gatsby Documentation Site`,
+    title: `DevDocs | Prototype Doc Site`,
     description: `A modern documentation site built on top of Gatsby.`,
     author: `jcalcaben`,
   },
@@ -38,6 +38,9 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              className: 'header-anchor'
+            }
           },
           {
             resolve: `gatsby-remark-images`,
@@ -51,6 +54,10 @@ module.exports = {
               verbose: false
             }
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            
+          }
         ],
         plugins: ["gatsby-remark-images"],
       },

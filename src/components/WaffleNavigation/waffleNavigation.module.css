@@ -1,5 +1,17 @@
 .root {
   display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+}
+
+.popover {
+  display: flex;
   align-items: flex-start;
   justify-content: space-around;
+  z-index: 1000;
+  margin-top: 35px;
+}
+
+.menu {
+  min-width: 300px;
 }

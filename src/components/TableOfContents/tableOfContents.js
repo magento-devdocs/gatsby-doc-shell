@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 
 import "@spectrum-css/sidenav"
 import classes from "./tableOfContents.module.css"
