@@ -1,3 +1,5 @@
 version: 1.0
 exampleVariable: This is an example variable
-hackTeam: Jekyll's Hyde
+hackTeam: Project Hyde
+cloud: Magento Commerce Cloud
+cloudTool: ece-tools

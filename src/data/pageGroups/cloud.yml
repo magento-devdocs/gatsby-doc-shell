@@ -1,0 +1,9 @@
+order: 3
+title: Cloud
+name: cloud-guide
+url: /cloud/cloud-intro/
+pages:
+  - title: Magento Commerce Cloud
+    url: /cloud/cloud-intro/
+  - title: Architecture
+    url: /cloud/cloud-architecture/

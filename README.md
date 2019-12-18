@@ -4,9 +4,15 @@ A documentation site template built on top of Gatsby.
 
 [Production site](https://jcalcaben.github.io/gatsby-doc-site/)
 
-## Build site
+Technologies used:
 
-1. Install the [Yarn package](https://yarnpkg.com/en/).
+- [Gatsby](https://www.gatsbyjs.org)
+- [MDX](https://mdxjs.com/getting-started)
+- [Yarn package](https://yarnpkg.com/en/)
+
+**To build the site in macOS:**
+
+1. Install the Yarn package.
 
    ```
    brew install yarn
@@ -18,7 +24,7 @@ A documentation site template built on top of Gatsby.
    yarn install
    ```
 
-1.  Build and run the site.
+1. Build and run the site.
 
    ```
    yarn develop

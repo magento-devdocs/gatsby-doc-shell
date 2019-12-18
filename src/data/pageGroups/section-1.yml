@@ -1,5 +1,5 @@
 order: 1
-title: Section One
+title: About
 name: section-1
 url: /
 pages:
@@ -9,8 +9,8 @@ pages:
   - title: Page 2
     url: /page-2/
     pages:
-      - title: Import MDX
-        url: /import-mdx/
+      - title: Example
+        url: /example/
         pages:
-          - title: Callouts
-            url: /callouts/
+          - title: Nest a page
+            url: /nested/page/

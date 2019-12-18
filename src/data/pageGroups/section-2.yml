@@ -1,10 +1,22 @@
 order: 2
-title: Section Two
+title: Site
 name: section-2
-url: /example/
+url: /setup/
 pages:
-  - title: Example
-    url: /example/
+  - title: Setup environment
+    url: /setup/
+    pages:
+    - title: Create a TOC
+      url: /navigation/
+    - title: Define global variables
+      url: /variables/
 
-  - title: Normal markdown
-    url: /normal-markdown/
+  - title: Write
+    url: /workflow/
+    pages:
+      - title: Use normal markdown
+        url: /normal-markdown/
+      - title: Reuse content
+        url: /import-mdx/
+      - title: Insert a note
+        url: /callouts/
