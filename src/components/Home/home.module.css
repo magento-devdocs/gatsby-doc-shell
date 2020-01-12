@@ -1,7 +1,7 @@
 .root {
     text-align: center;
     display: grid;
-    grid-template-columns: 48px auto;
+    grid-template-columns: minmax(30px,50px) auto;
     grid-auto-flow: column;
     justify-items: stretch;
     align-items: center;
@@ -16,7 +16,7 @@
 }
 
 .siteName {
-    text-align: left;
-    font-size: 1.2em;
+    text-align: center;
+    font-size: 1em;
     font-weight: bold;
 }

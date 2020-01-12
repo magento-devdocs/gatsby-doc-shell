@@ -32,7 +32,7 @@ const App = props => {
     <DataProvider>
       <GlobalSpectrumProvider size="medium" theme="light">
         <div className={defaultStyles.root}>
-          <section className={defaultStyles.sidebar}>
+          <section className={defaultStyles.leftSidebar}>
             <Home title={data.site.siteMetadata.title} to="/" />
             <Search />
             <TreeNavigation slug={slug} />
@@ -42,7 +42,7 @@ const App = props => {
             <Header siteTitle={siteTitle} slug={slug} />
             <div className={defaultStyles.topicContent}>
               <main className={defaultStyles.main}>{children}</main>
-              <section>
+              <section className={defaultStyles.rightSidebar}>
                 <TableOfContents data={currentPageContents} />
               </section>
             </div>
