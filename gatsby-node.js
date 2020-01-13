@@ -8,7 +8,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       name: "slug",
       node,
-      value: `${ value }`,
+      value: `${value}`,
     })
   }
 }
@@ -32,16 +32,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
-  } 
+  }
 
   const posts = result.data.allMdx.edges
 
-  posts.forEach(({ node  }, index) => {
-    createPage({
-      path: node.fields.slug,
-      context: { id: node.id  },
-      component: path.resolve(`./src/layouts/MdxLayout/mdxLayout.js`)
-    })
+  posts.forEach(({ node }, index) => {
+    const urlPath = node.fields.slug
+
+    if (!urlPath.includes("_includes")) {
+      createPage({
+        path: urlPath,
+        context: { id: node.id },
+        component: path.resolve(`./src/layouts/MdxLayout/mdxLayout.js`),
+      })
+    }
   })
 }
 
@@ -55,8 +59,8 @@ exports.onCreateWebpackConfig = ({
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        DocComponents: path.resolve(__dirname, 'src/doc-components/')
-      }
-    }
+        DocComponents: path.resolve(__dirname, "src/doc-components/"),
+      },
+    },
   })
 }
