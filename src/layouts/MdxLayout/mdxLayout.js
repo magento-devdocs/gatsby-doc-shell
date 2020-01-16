@@ -10,9 +10,28 @@ import SEO from "../../components/seo"
 import Callout from "../../doc-components/Callout"
 import GlobalVariable from "../../doc-components/GlobalVariable"
 
+import {
+  Table,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableHeaderCell,
+} from "../../components/Table"
+
 import "../global.css"
 
 const shortCodes = { Callout, GlobalVariable }
+const componentsMapping = {
+  table: Table,
+  thead: TableHead,
+  tr: TableRow,
+  tbody: TableBody,
+  td: TableCell,
+  th: TableHeaderCell,
+  Callout: Callout,
+  GlobalVariable: GlobalVariable,
+}
 
 const MdxLayout = props => {
   const { data } = props
@@ -25,7 +44,7 @@ const MdxLayout = props => {
         slug={mdx.fields.slug}
         currentPageContents={mdx.tableOfContents.items}
       >
-        <MDXProvider components={shortCodes}>
+        <MDXProvider components={componentsMapping}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
       </App>

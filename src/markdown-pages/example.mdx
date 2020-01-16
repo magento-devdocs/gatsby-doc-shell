@@ -18,4 +18,33 @@ Example variable: <GlobalVariable>exampleVariable</GlobalVariable>
 Name prop takes precedence over inner tag content:
 
 <GlobalVariable name="version">exampleVariable</GlobalVariable>
+
+## Grid Table
+
+<!-- prettier-ignore-start -->
+
++-------------+----------+------+
+| Table Headings         | Here |
++-------------+----------+------+
+| Sub         | Headings | Too  |
++=============+==========+======+
+| cell        | column spanning |
++ spans       +----------+------+
+| rows        | normal   | cell |
++-------------+----------+------+
+| multi       | cells can be    |
+| line        | *formatted*     |
+|             | **paragraphs**  |
+| cells       |                 |
+| too         |                 |
++-------------+-----------+-----+
+| Even lists! |  - Item 1       |
+|             |  - Item 2       |
+|             |  - Item 3       |
++-------------+-----------+-----+
+
+<!-- prettier-ignore-end -->
+
+**Note:** Grid tables require prettier ignore fences to prevent messy re-formatting.
+
 <ExampleSnippet />

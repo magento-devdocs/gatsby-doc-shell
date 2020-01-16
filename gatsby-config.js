@@ -63,8 +63,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
           },
+          {
+            resolve: `gatsby-remark-grid-tables`
+          },
         ],
-        plugins: ["gatsby-remark-images"],
+        plugins: ["gatsby-remark-images", "gatsby-remark-grid-tables"],
       },
     },
     {
