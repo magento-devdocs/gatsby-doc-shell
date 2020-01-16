@@ -28,9 +28,6 @@ module.exports = {
         icon: `src/images/icon.svg`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -39,8 +36,8 @@ module.exports = {
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
-              className: 'header-anchor'
-            }
+              className: "header-anchor",
+            },
           },
           {
             resolve: `gatsby-remark-images`,
@@ -51,13 +48,21 @@ module.exports = {
           {
             resolve: `gatsby-remark-check-links`,
             options: {
-              verbose: false
-            }
+              verbose: false,
+            },
+          },
+          {
+            resolve: `gatsby-remark-mermaid`,
+            options: {
+              viewport: {
+                width: 800,
+                height: 800,
+              },
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
-            
-          }
+          },
         ],
         plugins: ["gatsby-remark-images"],
       },

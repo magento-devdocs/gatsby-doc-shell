@@ -14,3 +14,6 @@ pages:
         pages:
           - title: Nest a page
             url: /nested/page/
+
+  - title: Diagrams
+    url: /diagrams/
