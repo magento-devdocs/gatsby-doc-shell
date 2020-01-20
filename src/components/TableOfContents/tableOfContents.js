@@ -29,7 +29,7 @@ const TableOfContents = props => {
     )
   }
 
-  const contents = data && data.map(toItem)
+  const contents = data && data[0].items && data[0].items.map(toItem)
 
   return (
     <nav className={classes.root}>

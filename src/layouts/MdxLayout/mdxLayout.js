@@ -63,7 +63,7 @@ export const pageQuery = graphql`
       fields {
         slug
       }
-      tableOfContents
+      tableOfContents(maxDepth: 3)
     }
   }
 `
