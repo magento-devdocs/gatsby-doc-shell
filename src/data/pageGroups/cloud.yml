@@ -7,3 +7,5 @@ pages:
     url: /cloud/cloud-intro/
   - title: Architecture
     url: /cloud/cloud-architecture/
+  - title: Comparison table
+    url: /cloud/cloud-table/
