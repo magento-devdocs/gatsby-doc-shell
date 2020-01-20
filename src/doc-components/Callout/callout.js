@@ -29,7 +29,7 @@ const Callout = props => {
   const [open, setOpen] = useState(true)
   const handleClose = useCallback(() => {
     setOpen(false)
-  })
+  }, [])
 
   const closeButton = closeable ? (
     <div className="spectrum-Alert-footer">

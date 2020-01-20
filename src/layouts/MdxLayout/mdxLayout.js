@@ -21,7 +21,6 @@ import {
 
 import "../global.css"
 
-const shortCodes = { Callout, GlobalVariable }
 const componentsMapping = {
   table: Table,
   thead: TableHead,
