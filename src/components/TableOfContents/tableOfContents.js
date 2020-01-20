@@ -33,7 +33,7 @@ const TableOfContents = props => {
 
   return (
     <nav className={classes.root}>
-      <h2 className="spectrum-SideNav-heading">Table of Contents</h2>
+      <h2 className="spectrum-SideNav-heading">On this page</h2>
       <ul className="spectrum-SideNav spectrum-SideNav--multiLevel">
         {contents}
       </ul>

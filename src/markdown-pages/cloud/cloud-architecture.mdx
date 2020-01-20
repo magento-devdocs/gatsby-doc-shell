@@ -19,64 +19,6 @@ The following table summarizes the differences between environments:
 | Includes Blackfire.io                  | Yes         | Yes               | Yes                  |
 | Includes New Relic                     | No          | APM               | APM + NRI            |
 
-<Callout type="info" header="HTML table">
-  The table above has been converted using HTML strip tool and `yarn prettier`,
-  while the table below represents the original HTML from the Magento Commerce
-  Cloud guide.
-</Callout>
-<table>
-  <tbody>
-    <tr>
-      <th class="blank" />
-      <th>Integration</th>
-      <th>Staging</th>
-      <th>Production</th>
-    </tr>
-    <tr>
-      <td>Supports settings management in the UI</td>
-      <td>Yes</td>
-      <td>Limited</td>
-      <td>Limited</td>
-    </tr>
-    <tr>
-      <td>Supports multiple branches</td>
-      <td>Yes</td>
-      <td>No (Staging only)</td>
-      <td>No (Production only)</td>
-    </tr>
-    <tr>
-      <td>Uses YAML files for configuration</td>
-      <td>Yes</td>
-      <td>No</td>
-      <td>No</td>
-    </tr>
-    <tr>
-      <td>Runs on dedicated IaaS hardware</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Includes Fastly CDN</td>
-      <td>No</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Includes Blackfire.io</td>
-      <td>Yes</td>
-      <td>Yes</td>
-      <td>Yes</td>
-    </tr>
-    <tr>
-      <td>Includes New Relic</td>
-      <td>No</td>
-      <td>APM</td>
-      <td>APM + NRI</td>
-    </tr>
-  </tbody>
-</table>
-
 ## Integration environment
 
 Developers use the Integration environment to develop, deploy, and test:
@@ -151,6 +93,6 @@ The <GlobalVariable name="cloud" /> creates the backup using snapshots to encryp
 - **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after which, the RPO is 6 hours (maximum time to last backup).
 - **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
-<!-- links -->
+<!-- link definitions -->
 
 [nri]: https://newrelic.com/products/infrastructure

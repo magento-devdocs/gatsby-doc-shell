@@ -6,8 +6,8 @@ pages:
   - title: Setup environment
     url: /setup/
     pages:
-    - title: Create a TOC
-      url: /navigation/
+    - title: Configure menus
+      url: /navigation/navigation/
     - title: Define global variables
       url: /variables/
 
