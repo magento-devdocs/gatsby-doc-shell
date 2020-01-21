@@ -9,3 +9,5 @@ pages:
     url: /cloud/cloud-architecture/
   - title: Comparison table
     url: /cloud/cloud-table/
+  - title: Magento payment provider gateway
+    url: /cloud/mermaid/
