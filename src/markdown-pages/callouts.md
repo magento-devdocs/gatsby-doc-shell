@@ -2,7 +2,7 @@
 title: Callouts
 ---
 
-import Example from "./example.mdx"
+import Example from "./\_includes/re-usable-content.mdx"
 
 # Callouts
 
