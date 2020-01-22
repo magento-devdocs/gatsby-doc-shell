@@ -13,7 +13,9 @@ This is version <GlobalVariable name='version'/> of a Doc site created by <Globa
 | Content  | More content |
 
 <Callout type="tip" header="Guess what!">
-  The `yarn prettier` command automatically reformats your messy tables! Yep. So cool...
+
+The `yarn prettier` command automatically reformats your messy tables! Yep. So cool...
+
 </Callout>
 
 ## Example from DevDocs:

@@ -6,9 +6,11 @@ import Example from "./example.mdx"
 
 # Callouts
 
-Callouts are helpful when drawing attention to important information. To add a callout in your topic, use the following syntax:
+Callouts are helpful when drawing attention to important information.
 
-```
+To add a callout in your topic, use the following syntax:
+
+```jsx
 <Callout type="tip" header="Short description or title">
   Place message about a tip here.
 </Callout>
@@ -18,6 +20,22 @@ Sample output:
 
 <Callout type="tip" header="Short description or title">
   Place message about a tip here.
+</Callout>
+
+To use markdown inside a callout, add a space between the tag and content:
+
+```jsx
+<Callout type="tip" header="Short description or title">
+  Place **message** about a tip here.
+</Callout>
+```
+
+Output:
+
+<Callout type="tip" header="Short description or title">
+
+Place **message** about a tip here.
+
 </Callout>
 
 ## Tip
@@ -45,7 +63,13 @@ Sample output:
 ## Error
 
 <Callout type="error" header="Oops!">
-  These Callouts do not support **markdown**.
-  <br />
-  They are supposed to be simple message boxes, so should they?
+
+These Callouts also support **markdown**!
+
+However, they are supposed to be _simple_ message boxes, so should they?
+
+| Header 1 | Header 2     |
+| -------- | ------------ |
+| Content  | More content |
+
 </Callout>
