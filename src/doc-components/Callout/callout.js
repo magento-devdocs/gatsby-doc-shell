@@ -10,10 +10,22 @@ import InfoMedium from "@spectrum-css/icon/combined/InfoMedium.svg"
 import SuccessMedium from "@spectrum-css/icon/combined/SuccessMedium.svg"
 
 const iconMap = {
-  info: InfoMedium,
-  tip: SuccessMedium,
-  warning: AlertMedium,
-  error: AlertMedium,
+  info: {
+    name: "InfoMedium",
+    icon: InfoMedium,
+  },
+  tip: {
+    name: "SuccessMedium",
+    icon: SuccessMedium,
+  },
+  warning: {
+    name: "AlertMedium",
+    icon: AlertMedium,
+  },
+  error: {
+    name: "AlertMedium",
+    icon: AlertMedium,
+  },
 }
 
 const spectrumTypeMap = {
@@ -42,7 +54,7 @@ const Callout = props => {
     </div>
   ) : null
 
-  const Icon = iconMap[type]
+  const Icon = iconMap[type].icon
   return open ? (
     <div className={`spectrum-Alert spectrum-Alert--${spectrumTypeMap[type]}`}>
       <Icon
