@@ -48,11 +48,12 @@
 
   .rightSidebar {
     display: block;
+    width: 200px;
   }
 }
 @media screen and (min-device-width: 1024px) {
   .main {
-    width: calc(100vw - 300px);
+    width: calc(100vw - 600px);
   }
 
   .topicContent {
@@ -66,6 +67,7 @@
     width: calc(100vw - 650px);
   }
 
-  .topicContent {
+  .rightSidebar {
+    width: 250px;
   }
 }
