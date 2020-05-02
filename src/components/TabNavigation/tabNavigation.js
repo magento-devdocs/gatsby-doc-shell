@@ -8,12 +8,14 @@ import "@spectrum-css/tabs"
 
 import getPageGroup from "../util/getPageGroup"
 
+import defaultStyles from "./tabNavigation.module.css"
+
 const classes = {
   list:
-    "spectrum-Tabs spectrum-Tabs--horizontal spectrum-Tabs--compact spectrum-Tabs--quiet",
-  listItem: "spectrum-Tabs-item",
-  selected: "spectrum-Tabs-item is-selected",
-  label: "spectrum-Tabs-itemLabel",
+    `${defaultStyles.list} spectrum-Tabs desktop-view mobile-view spectrum-Tabs--horizontal`,
+  listItem: `${defaultStyles.listItem} spectrum-Tabs-item`,
+  selected: `${defaultStyles.listItem} spectrum-Tabs-item is-selected`,
+  label: `${defaultStyles.label} spectrum-Tabs-itemLabel`,
   indicator: "spectrum-Tabs-selectionIndicator",
 }
 
@@ -45,7 +47,7 @@ const TabNavigation = props => {
       }
 
       return (
-        <div
+        <li
           key={tab.name}
           className={tabClass}
           tabIndex="0"
@@ -53,13 +55,17 @@ const TabNavigation = props => {
           onKeyPress={clickAction}
           role="button"
         >
-          <label className={classes.label}>{tab.title}</label>
+          <span className={classes.label}>{tab.title}</span>
           {indicator}
-        </div>
+        </li>
       )
     })
 
-  return <div className={classes.list}>{tabs}</div>
+  return (
+    <div className={defaultStyles.root}>
+      <ul className={classes.list}>{tabs}</ul>
+    </div>
+  )
 }
 
 export default TabNavigation

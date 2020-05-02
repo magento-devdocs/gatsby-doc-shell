@@ -39,7 +39,9 @@ const App = props => {
           </section>
           <div className={defaultStyles.gap} />
           <div className={defaultStyles.content}>
-            <Header siteTitle={siteTitle} slug={slug} />
+            <section className={defaultStyles.leftSidebar}>
+              <TreeNavigation slug={slug} />
+            </section>
             <div className={defaultStyles.topicContent}>
               <main className={defaultStyles.main}>{children}</main>
               <section className={defaultStyles.rightSidebar}>
