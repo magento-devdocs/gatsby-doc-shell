@@ -1,7 +1,7 @@
 import React from "react"
 
 import WaffleNavigation from "../WaffleNavigation"
-import Search from '../Search';
+import Search from "../Search"
 
 import defaultStyles from "./actions.module.css"
 

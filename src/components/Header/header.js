@@ -9,7 +9,7 @@ const Header = ({ siteTitle, slug }) => {
   const classNames = [defaultStyles.root, "spectrum--light"]
   return (
     <header className={classNames.join(" ")}>
-        <Navigation slug={slug} />
+      <Navigation slug={slug} />
     </header>
   )
 }

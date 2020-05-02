@@ -11,8 +11,7 @@ import getPageGroup from "../util/getPageGroup"
 import defaultStyles from "./tabNavigation.module.css"
 
 const classes = {
-  list:
-    `${defaultStyles.list} spectrum-Tabs desktop-view mobile-view spectrum-Tabs--horizontal`,
+  list: `${defaultStyles.list} spectrum-Tabs desktop-view mobile-view spectrum-Tabs--horizontal`,
   listItem: `${defaultStyles.listItem} spectrum-Tabs-item`,
   selected: `${defaultStyles.listItem} spectrum-Tabs-item is-selected`,
   label: `${defaultStyles.label} spectrum-Tabs-itemLabel`,
