@@ -3,10 +3,29 @@
   margin: 0;
   padding: 0;
   outline: none;
+  height: auto;
+  max-height: 1000px;
+  overflow: hidden;
+	transition: max-height 1.5s;
+}
+
+.rootHidden {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  overflow: hidden;
+  max-height: 0;
+	transition: max-height .25s ease-out;
 }
 
 .rootLevel0,
 .rootLevel1,
 .rootLevel2 {
   composes: root;
+}
+
+.rootLevel1Hidden,
+.rootLevel2Hidden {
+  composes: rootHidden;
 }

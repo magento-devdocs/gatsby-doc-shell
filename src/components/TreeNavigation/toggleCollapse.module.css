@@ -27,6 +27,7 @@
 }
 
 .all {
+  cursor: pointer;
   display: block;
   background: transparent;
   font-size: 0.7rem;

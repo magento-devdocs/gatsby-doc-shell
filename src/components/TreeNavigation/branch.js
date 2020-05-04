@@ -1,13 +1,30 @@
-import React from "react"
+import React, { useContext } from "react"
 
 import defaultStyles from "./branch.module.css"
 import TreeNode from "./treeNode"
 import ToggleCollapse from "./toggleCollapse"
 
+import { TreeNavigationContext } from "./treeNavigation"
+
 const Branch = props => {
   const { pages, depth, parent } = props
 
-  const rootClassName = defaultStyles[`rootLevel${depth}`]
+  const { openBranches, expand, collapse } = useContext(TreeNavigationContext)
+
+  const open = openBranches.includes(parent)
+
+  const toggleClickAction = open
+    ? () => {
+        collapse(parent)
+      }
+    : () => {
+        expand(parent)
+      }
+
+  const rootClassName =
+    open || parent == null
+      ? defaultStyles[`rootLevel${depth}`]
+      : defaultStyles.rootHidden
 
   const listClassName = `${rootClassName} spectrum-SideNav spectrum-SideNav--multiLevel`
 
@@ -15,7 +32,7 @@ const Branch = props => {
     const { title, url, pages: childPages } = page
     return (
       <TreeNode
-        id={title}
+        key={title}
         title={title}
         depth={depth}
         url={url}
@@ -26,7 +43,11 @@ const Branch = props => {
 
   return (
     <>
-      <ToggleCollapse depth={depth} />
+      <ToggleCollapse
+        depth={depth}
+        open={open}
+        clickAction={toggleClickAction}
+      />
       <ul className={listClassName}>{nodes}</ul>
     </>
   )
