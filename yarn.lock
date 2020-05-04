@@ -1248,6 +1248,11 @@
   resolved "https://registry.yarnpkg.com/@spectrum-css/button/-/button-2.0.3.tgz#774b62970699cbd995259f6d3b0853e60edfb0a2"
   integrity sha512-dsf0bwQb3FyZlu8+vxB4yqsh5uZVWb9u9ecRjZ5mFlBgQjw/2G59g+SiBZk1w5ULfQzI/SrBBdyATxg7XNOQqg==
 
+"@spectrum-css/buttongroup@^3.0.0-beta.1":
+  version "3.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@spectrum-css/buttongroup/-/buttongroup-3.0.0-beta.1.tgz#bc49a3e9d3e3f0a1de9cadf991aacd8dab1ee5dc"
+  integrity sha512-axZu5FS513uPaZF3VXchn6+N6TZ4kuu5fiGU89UWSCVOhk4+KLm2x10e0i+y6kWS8RT/cqOBi/bgbPm2SNiorA==
+
 "@spectrum-css/icon@^2.0.2":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@spectrum-css/icon/-/icon-2.0.3.tgz#965fadab8c722ef591efe7184f19b58dbeef46fc"
