@@ -1,4 +1,5 @@
 import React from "react"
+import Helmet from "react-helmet"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -42,6 +43,9 @@ const MdxLayout = props => {
   const { mdx } = data
   return (
     <>
+      <Helmet>
+        <link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css" />
+      </Helmet>
       <SEO title={mdx.frontmatter.title} />
       <App
         title={mdx.frontmatter.title}

@@ -1,14 +1,40 @@
 .root {
-    grid-row: footer;
-    grid-column: sidebar / 4;
-    height: 75px;
-    align-items: center;
-    justify-items: center;
-    display: grid;
+    margin-left: 270px;
+    padding: 20px 40px;
+    z-index: 3;
+    background-color: #fff;
+}
+.container {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    padding: 10px 0 0 0;
+    border-top: 2px solid var(--spectrum-tabs-rule-color, var(--spectrum-global-color-gray-200));
+    margin: 0 auto;
+
 }
 
 .linkContainer {
-    display: grid;
-    grid-auto-flow: column;
-    grid-column-gap: 10px;
+    flex: 1 0 0;
+    padding: 0 0 10px 0;
+}
+
+.linkContainer::before {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.linkList {
+    margin: 0;
+    padding: 0;
+}
+
+.listItem {
+    display: inline-block;
+    margin: 0 30px 10px 0;
+}
+
+a.link, a.link:hover {
+    color: var(--spectrum-body-text-color);
 }

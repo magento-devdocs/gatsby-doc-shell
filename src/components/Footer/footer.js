@@ -5,9 +5,12 @@ import defaultStyles from "./footer.module.css"
 import { useData } from "../Data"
 
 const classes = {
-  root: ["spectrum", defaultStyles.root, "spectrum--dark"].join(" "),
-  link: "spectrum spectrum-Link",
+  root: defaultStyles.root,
+  link: `${defaultStyles.link} spectrum spectrum-Link`,
   linkContainer: defaultStyles.linkContainer,
+  container: defaultStyles.container,
+  linkList: defaultStyles.linkList,
+  listItem: defaultStyles.listItem
 }
 
 const Footer = props => {
@@ -17,18 +20,22 @@ const Footer = props => {
 
   const linkList = links.map(link => {
     return (
-      <span key={link.name}>
+      <li className={classes.listItem} key={link.name}>
         <a className={classes.link} href={link.url}>
           {link.name}
         </a>
-      </span>
+      </li>
     )
   })
 
   return (
     <footer className={classes.root}>
-      <div className={classes.linkContainer}>{linkList}</div>
-      <div>© {copyrightYear} Magento. All rights reserved.</div>
+      <div className={classes.container}>
+        <div className={classes.linkContainer}>
+          <ul className={classes.linkList}>{linkList}</ul>
+          </div>
+        <div>© {copyrightYear} Magento. All rights reserved.</div>
+      </div>
     </footer>
   )
 }
