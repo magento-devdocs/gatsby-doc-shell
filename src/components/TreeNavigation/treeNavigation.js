@@ -18,7 +18,7 @@ const TreeNavigation = props => {
   const group = getPageGroup(slug, pageGroups)
 
   const [openBranches, setOpenBranches] = useState([])
-  const [fullyExpanded, setFullyExpanded] = useState(false);
+  const [fullyExpanded, setFullyExpanded] = useState(false)
 
   const expand = url => {
     setOpenBranches(openBranches.concat([url]))
@@ -40,7 +40,7 @@ const TreeNavigation = props => {
     nodeVisitor(group)
 
     setOpenBranches(newArray)
-    setFullyExpanded(true);
+    setFullyExpanded(true)
   }
 
   const collapse = url => {
@@ -49,7 +49,7 @@ const TreeNavigation = props => {
 
   const collapseAll = () => {
     setOpenBranches([])
-    setFullyExpanded(false);
+    setFullyExpanded(false)
   }
 
   const api = {

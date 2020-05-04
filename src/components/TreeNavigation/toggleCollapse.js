@@ -8,7 +8,9 @@ import { TreeNavigationContext } from "./treeNavigation"
 
 const ToggleCollapse = props => {
   const { depth, clickAction, open = false } = props
-  const { expandAll, collapseAll,fullyExpanded } = useContext(TreeNavigationContext)
+  const { expandAll, collapseAll, fullyExpanded } = useContext(
+    TreeNavigationContext
+  )
 
   const rootClassName = defaultStyles[`rootLevel${depth}`]
 
