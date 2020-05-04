@@ -7,8 +7,10 @@ import TreeNavigation from "../TreeNavigation"
 import getPageGroup from "../util/getPageGroup"
 import { useData } from "../Data"
 
+import Content from "./content"
+
 const Main = props => {
-  const { slug, data, children } = props
+  const { slug, data, title, children } = props
   const { pageGroups } = useData()
 
   const group = getPageGroup(slug, pageGroups)
@@ -34,6 +36,7 @@ const Main = props => {
             <TreeNavigation slug={slug} />
           </div>
         </aside>
+        <Content title={title}>{children}</Content>
       </div>
     </div>
   )

@@ -24,16 +24,19 @@ const App = props => {
     }
   `)
 
-  const { currentPageContents, title, slug, children } = props
+  const { currentPageContents, title, slug, children, headings } = props
 
   const siteTitle = title || data.site.siteMetadata.title
+
+  const headerOne = headings ? headings[0] : null
+  const pageTitle = headerOne ? headerOne.value : title
 
   return (
     <DataProvider>
       <GlobalSpectrumProvider size="medium" theme="light">
         <div className={defaultStyles.root}>
           <Header siteTitle={siteTitle} slug={slug} />
-          <Main slug={slug} data={currentPageContents}>
+          <Main slug={slug} data={currentPageContents} title={pageTitle}>
             {children}
           </Main>
           <Footer />

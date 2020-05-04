@@ -21,7 +21,12 @@ import {
 
 import "../global.css"
 
+const HeaderOneOverride = ({ children }) => {
+  return null
+}
+
 const componentsMapping = {
+  h1: HeaderOneOverride,
   table: Table,
   thead: TableHead,
   tr: TableRow,
@@ -42,6 +47,7 @@ const MdxLayout = props => {
         title={mdx.frontmatter.title}
         slug={mdx.fields.slug}
         currentPageContents={mdx.tableOfContents.items}
+        headings={mdx.headings}
       >
         <MDXProvider components={componentsMapping}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -63,6 +69,9 @@ export const pageQuery = graphql`
         slug
       }
       tableOfContents(maxDepth: 3)
+      headings(depth: h1) {
+        value
+      }
     }
   }
 `

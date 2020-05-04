@@ -1,0 +1,24 @@
+.root {
+  position: relative;
+  padding-left: 270px;
+  padding-right: 200px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  padding: 0 10px 50px 50px;
+  flex: 1 1 auto;
+  max-width: 1080px;
+  min-width: 360px;
+}
+
+.info {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 20px 0 0 20px;
+}
