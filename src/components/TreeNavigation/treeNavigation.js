@@ -7,6 +7,7 @@ import getPageGroup from "../util/getPageGroup"
 import defaultClasses from "./treeNavigation.module.css"
 
 import "@spectrum-css/sidenav"
+import Branch from "./branch"
 
 const classes = {
   list: "spectrum-SideNav spectrum-SideNav--multiLevel",
@@ -16,6 +17,27 @@ const classes = {
   link: "spectrum-SideNav-itemLink",
 }
 
+const TreeNavigation = props => {
+  const {slug} = props;
+  const {pageGroups } = useData();
+
+  const group = getPageGroup(slug, pageGroups);
+  
+  const buttonText = "Expand"
+
+  if (group) {
+    return (
+      <div className={defaultClasses.root}>
+        <Branch pages={group.pages} depth={0}/>
+      </div>
+    )
+
+  }
+
+  return null;
+}
+
+/*
 const TreeNavigation = props => {
   const { slug } = props
   const { pageGroups } = useData()
@@ -58,5 +80,6 @@ const Branch = props => {
 
   return <ul className={listClass}>{listItems}</ul>
 }
+*/
 
 export default TreeNavigation

@@ -1,0 +1,11 @@
+.label {
+
+}
+
+.link {
+    composes: label;
+}
+
+.text {
+    composes: label;
+}
