@@ -9,22 +9,27 @@ import defaultStyles from "./treeNode.module.css"
 const TreeNode = props => {
   const { depth, title, url, childPages } = props
 
-  const className = defaultStyles[`rootLevel${depth}`]
+  const rootClassName = defaultStyles[`rootLevel${depth}`]
+
+  const classes = {
+    list: `${rootClassName} spectrum-SideNav-item`,
+    link: `${defaultStyles.link} spectrum-SideNav-itemLink`,
+  }
 
   const subTree = childPages ? (
     <Branch pages={childPages} depth={depth + 1} parent={url} />
   ) : null
 
   const label = url ? (
-    <Link className={defaultStyles.link} to={url}>
+    <Link className={classes.link} to={url}>
       {title}
     </Link>
   ) : (
-    <span className={defaultStyles.text}>{title}</span>
+    <span className={classes.link}>{title}</span>
   )
 
   return (
-    <li className={className}>
+    <li className={classes.list}>
       {label}
       {subTree}
     </li>

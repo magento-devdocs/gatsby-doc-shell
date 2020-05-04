@@ -1,11 +1,31 @@
-.label {
+.root {
+  position: relative;
+  list-style: none;
+}
 
+.rootLevel0,
+.rootLevel1,
+.rootLevel2 {
+  composes: root;
+}
+
+.label {
+  text-decoration: none;
+  padding-left: 30px;
 }
 
 .link {
-    composes: label;
+  composes: label;
+}
+
+.rootLevel1 .link {
+  padding-left: 43px !important;
+}
+
+.rootLevel2 .link {
+  padding-left: 56px !important;
 }
 
 .text {
-    composes: label;
+  composes: label;
 }

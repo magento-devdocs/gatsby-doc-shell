@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import { useData } from "../Data"
 import getPageGroup from "../util/getPageGroup"
 
-import defaultClasses from "./treeNavigation.module.css"
+import defaultStyles from "./treeNavigation.module.css"
 
 import "@spectrum-css/sidenav"
 import Branch from "./branch"
@@ -27,7 +27,7 @@ const TreeNavigation = props => {
 
   if (group) {
     return (
-      <div className={defaultClasses.root}>
+      <div className={defaultStyles.root}>
         <Branch pages={group.pages} depth={0}/>
       </div>
     )

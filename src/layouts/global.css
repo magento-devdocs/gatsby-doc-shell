@@ -12,6 +12,11 @@ body {
   margin-right: 10px;
 }
 
+li {
+  padding-left: .1em;
+  margin-bottom: .7em;
+}
+
 *,
 *:before,
 *:after {
