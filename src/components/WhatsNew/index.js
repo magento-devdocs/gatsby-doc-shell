@@ -37,13 +37,16 @@ const WhatsNew = props => {
   const { files } = data
 
   const updatedFiles = files.map(({ file, fields, name }) => {
-    const lastUpdated = parseInt(fields.gitLogLatestDate, 10)
+    const lastUpdated =
+      fields && fields.gitLogLatestDate
+        ? parseInt(fields.gitLogLatestDate, 10)
+        : -1
 
     const isIncludeFile = file.fields.slug.includes("_includes")
 
     const title = file.frontmatter.title || name
 
-    if (lastUpdated < days && !isIncludeFile) {
+    if (lastUpdated > 0 && lastUpdated < days && !isIncludeFile) {
       return (
         <li key={file.fields.slug}>
           <Link to={file.fields.slug}>{title}</Link>

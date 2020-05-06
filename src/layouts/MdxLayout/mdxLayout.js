@@ -8,7 +8,7 @@ import App from "../../components/App"
 import SEO from "../../components/seo"
 
 import Callout from "../../doc-components/Callout"
-import GlobalVariable from "../../doc-components/GlobalVariable"
+import Variable from "../../doc-components/Variable"
 
 import {
   Table,
@@ -29,7 +29,7 @@ const componentsMapping = {
   td: TableCell,
   th: TableHeaderCell,
   Callout: Callout,
-  GlobalVariable: GlobalVariable,
+  Variable: Variable,
 }
 
 const MdxLayout = props => {

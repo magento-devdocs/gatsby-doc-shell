@@ -56,6 +56,8 @@ typings/
 
 # dotenv environment variable files
 .env*
+!.env.local
+!.env.production
 
 # gatsby files
 .cache/
@@ -71,3 +73,7 @@ yarn-error.log
 
 # Yarn Integrity file
 .yarn-integrity
+
+# External files
+external/
+!external/.gitkeep

@@ -37,6 +37,7 @@
     "gatsby-remark-mermaid": "^1.2.0",
     "gatsby-remark-prismjs": "^3.3.27",
     "gatsby-source-filesystem": "^2.1.39",
+    "gatsby-source-git": "^1.0.2",
     "gatsby-transformer-gitinfo": "^1.1.0",
     "gatsby-transformer-sharp": "^2.3.6",
     "gatsby-transformer-yaml": "^2.2.20",
@@ -51,7 +52,8 @@
   "devDependencies": {
     "husky": "^4.0.0-beta.5",
     "prettier": "^1.19.1",
-    "pretty-quick": "^2.0.1"
+    "pretty-quick": "^2.0.1",
+    "rimraf": "^3.0.2"
   },
   "keywords": [
     "gatsby",
@@ -59,12 +61,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "build:production": "gatsby build --prefix-paths",
-    "clean": "gatsby clean",
+    "build": "yarn clean && gatsby build",
+    "build:production": "yarn clean && gatsby build --prefix-paths",
+    "clean": "yarn reset && gatsby clean",
     "develop": "gatsby develop",
     "prettier": "prettier --write \"src/**/*.{js,jsx,json,md,mdx}\"",
     "prettier:check": "prettier --check \"src/**/*.{js,jsx,json,md,mdx}\"",
+    "reset": "rimraf src/external/*",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "yarn prettier:check"

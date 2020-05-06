@@ -24,6 +24,9 @@ jobs:
           npm test
 
       - name: Build production site
+        env:
+          REMOTE_REPOSITORY: ${{ secrets.REMOTE_REPOSITORY }}
+          REMOTE_REPOSITORY_BRANCH: ${{ secrets.REMOTE_REPOSITORY_BRANCH }}
         run: |
           yarn build:production
 

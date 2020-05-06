@@ -1,0 +1,15 @@
+variables:
+  - name: version
+    value: "1.0"
+
+  - name: exampleVariable
+    value: This is an example variable
+
+  - name: hackTeam
+    value: Project Hyde
+
+  - name: cloud
+    value: Magento Commerce Cloud
+
+  - name: cloudTool
+    value: ece-tools

@@ -1,0 +1,19 @@
+order: -1
+title: Section Title
+name: section-identifier
+url: /
+pages:
+  - title: Home
+    url: /
+
+  - title: Page 1
+    url: /page-1/
+    pages:
+      - title: Page 1.1
+        url: /page-1/page-1-1/
+        pages:
+          - title: Maximum nested page
+            url: /max/nested/page/
+
+  - title: Page 2
+    url: /page-2/

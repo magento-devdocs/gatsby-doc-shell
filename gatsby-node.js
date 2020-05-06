@@ -4,11 +4,23 @@ const path = require("path")
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   if (node.internal.type === "Mdx") {
-    const value = createFilePath({ node, getNode })
+
+    let filepath = createFilePath({ node, getNode });
+
+    const pathSegments = filepath.split(path.sep);
+
+    // Remove markdown from the url path
+    if(filepath.startsWith("/markdown")){
+      pathSegments.shift();
+      pathSegments.shift();
+    }
+
+    const slug = path.join('/', ...pathSegments, '/');
+
     createNodeField({
       name: "slug",
       node,
-      value: `${value}`,
+      value: `${slug}`,
     })
   }
 }
@@ -37,11 +49,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allMdx.edges
 
   posts.forEach(({ node }, index) => {
-    const urlPath = node.fields.slug
+    const slug = node.fields.slug
 
-    if (!urlPath.includes("_includes")) {
+    if (!slug.includes("_includes")) {
+
       createPage({
-        path: urlPath,
+        path: slug,
         context: { id: node.id },
         component: path.resolve(`./src/layouts/MdxLayout/mdxLayout.js`),
       })
@@ -61,6 +74,7 @@ exports.onCreateWebpackConfig = ({
       alias: {
         DocComponents: path.resolve(__dirname, "src/doc-components/"),
       },
+      symlinks: false,
     },
   })
 }
