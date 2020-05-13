@@ -14,6 +14,7 @@ const Main = props => {
   const { pageGroups } = useData()
 
   const group = getPageGroup(slug, pageGroups)
+  const groupTitle = group ? group.title : null
   /*
           <div className={defaultStyles.content}>
             <section className={defaultStyles.leftSidebar}>
@@ -32,11 +33,11 @@ const Main = props => {
       <div className={defaultStyles.container}>
         <aside className={defaultStyles.leftSidebar}>
           <div className={defaultStyles.leftSidebarWrapper}>
-            <h4 className={defaultStyles.leftSidebarTitle}>{group.title}</h4>
+            <h4 className={defaultStyles.leftSidebarTitle}>{groupTitle}</h4>
             <TreeNavigation slug={slug} />
           </div>
         </aside>
-        <Content title={title}>{children}</Content>
+        <Content title={title} data={data}>{children}</Content>
       </div>
     </div>
   )

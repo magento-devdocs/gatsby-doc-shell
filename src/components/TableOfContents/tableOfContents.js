@@ -1,10 +1,16 @@
 import React from "react"
 
-import "@spectrum-css/sidenav"
-import classes from "./tableOfContents.module.css"
+import "@spectrum-css/menu"
+import defaultStyles from "./tableOfContents.module.css"
 
 const TableOfContents = props => {
   const { data } = props
+
+  const classes = {
+    root: defaultStyles.root,
+    list: `${defaultStyles.list} spectrum-Menu is-selectable`,
+    item: `${defaultStyles.item} spectrum-Menu-item`
+  }
 
   const toItem = section => {
     const subSections = section.items ? (
@@ -33,8 +39,7 @@ const TableOfContents = props => {
 
   return (
     <nav className={classes.root}>
-      <h2 className="spectrum-SideNav-heading">On this page</h2>
-      <ul className="spectrum-SideNav spectrum-SideNav--multiLevel">
+      <ul className={classes.list}>
         {contents}
       </ul>
     </nav>
