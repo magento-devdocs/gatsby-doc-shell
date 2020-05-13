@@ -37,7 +37,9 @@ const Main = props => {
             <TreeNavigation slug={slug} />
           </div>
         </aside>
-        <Content title={title} data={data}>{children}</Content>
+        <Content title={title} data={data}>
+          {children}
+        </Content>
       </div>
     </div>
   )

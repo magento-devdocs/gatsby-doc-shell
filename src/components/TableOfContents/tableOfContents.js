@@ -9,7 +9,7 @@ const TableOfContents = props => {
   const classes = {
     root: defaultStyles.root,
     list: `${defaultStyles.list} spectrum-Menu is-selectable`,
-    item: `${defaultStyles.item} spectrum-Menu-item`
+    item: `${defaultStyles.item} spectrum-Menu-item`,
   }
 
   const toItem = section => {
@@ -39,9 +39,7 @@ const TableOfContents = props => {
 
   return (
     <nav className={classes.root}>
-      <ul className={classes.list}>
-        {contents}
-      </ul>
+      <ul className={classes.list}>{contents}</ul>
     </nav>
   )
 }

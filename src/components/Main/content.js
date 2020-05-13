@@ -1,9 +1,9 @@
 import React from "react"
 
-import ContentHeader from './contentHeader'
-import ContentFooter from './contentFooter'
-import PageInfo from './pageInfo'
-import TableOfContents from '../TableOfContents'
+import ContentHeader from "./contentHeader"
+import ContentFooter from "./contentFooter"
+import PageInfo from "./pageInfo"
+import TableOfContents from "../TableOfContents"
 
 import defaultStyles from "./content.module.css"
 
@@ -15,9 +15,11 @@ const Content = props => {
       <div className={defaultStyles.wrap}>
         <ContentHeader>{title}</ContentHeader>
         <main>{children}</main>
-        <ContentFooter/>
+        <ContentFooter />
       </div>
-      <PageInfo><TableOfContents data={data}/></PageInfo>
+      <PageInfo>
+        <TableOfContents data={data} />
+      </PageInfo>
     </section>
   )
 }

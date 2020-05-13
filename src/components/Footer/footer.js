@@ -10,7 +10,7 @@ const classes = {
   linkContainer: defaultStyles.linkContainer,
   container: defaultStyles.container,
   linkList: defaultStyles.linkList,
-  listItem: defaultStyles.listItem
+  listItem: defaultStyles.listItem,
 }
 
 const Footer = props => {
@@ -33,7 +33,7 @@ const Footer = props => {
       <div className={classes.container}>
         <div className={classes.linkContainer}>
           <ul className={classes.linkList}>{linkList}</ul>
-          </div>
+        </div>
         <div>© {copyrightYear} Magento. All rights reserved.</div>
       </div>
     </footer>
