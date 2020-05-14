@@ -11,7 +11,7 @@ const TreeNode = props => {
 
   const rootClassName = defaultStyles[`rootLevel${depth}`]
 
-  const selectedClass = url===currentPage ? "is-selected":'';
+  const selectedClass = url === currentPage ? "is-selected" : ""
 
   const classes = {
     list: `${selectedClass} ${rootClassName} spectrum-SideNav-item`,
@@ -19,7 +19,12 @@ const TreeNode = props => {
   }
 
   const subTree = childPages ? (
-    <Branch pages={childPages} depth={depth + 1} parent={url} currentPage={currentPage} />
+    <Branch
+      pages={childPages}
+      depth={depth + 1}
+      parent={url}
+      currentPage={currentPage}
+    />
   ) : null
 
   const label = url ? (

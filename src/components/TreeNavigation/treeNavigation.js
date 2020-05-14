@@ -4,7 +4,7 @@ import { useData } from "../Data"
 import getPageGroup from "../util/getPageGroup"
 
 import defaultStyles from "./treeNavigation.module.css"
-import {getPath} from "./util"
+import { getPath } from "./util"
 
 import "@spectrum-css/sidenav"
 import Branch from "./branch"
@@ -17,9 +17,9 @@ const TreeNavigation = props => {
 
   const group = getPageGroup(slug, pageGroups)
 
-  const initialOpen = [];
+  const initialOpen = []
 
-  getPath(group,initialOpen,slug);
+  getPath(group, initialOpen, slug)
 
   const [openBranches, setOpenBranches] = useState(initialOpen)
   const [fullyExpanded, setFullyExpanded] = useState(false)
