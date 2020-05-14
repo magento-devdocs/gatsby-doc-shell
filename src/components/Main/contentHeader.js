@@ -2,14 +2,26 @@ import React from "react"
 
 import "@spectrum-css/buttongroup"
 
+import path from "path"
+
+import { useData } from "../Data"
 import defaultStyles from "./contentHeader.module.css"
-import { Link } from "gatsby"
 
 import Edit from "./icons/edit.svg"
 import Bug from "./icons/bug.svg"
 
 const ContentHeader = props => {
-  const { children } = props
+  const { children, editPath } = props
+
+  const { siteMetadata } = useData().site
+
+  const editUrl = editPath
+    ? path.join(siteMetadata.editPageBaseUrl, editPath)
+    : null
+
+  const reportUrl = path.join(siteMetadata.githubRepository, "issues/new")
+
+  console.log(editUrl)
 
   const classes = {
     header: `${defaultStyles.header} spectrum-Heading1 spectrum-Heading--XXL`,
@@ -25,16 +37,16 @@ const ContentHeader = props => {
         <h1 className={classes.header}>{children}</h1>
         <div className={classes.actions}>
           <div>
-            <Link className={classes.actionButton} to="/">
+            <a className={classes.actionButton} href={editUrl}>
               <Edit className={classes.icon} />
               <span className={classes.actionLabel}>Edit on GitHub</span>
-            </Link>
+            </a>
           </div>
           <div>
-            <Link className={classes.actionButton} to="/">
+            <a className={classes.actionButton} href={reportUrl}>
               <Bug className={classes.icon} />
               <span className={classes.actionLabel}>Report an Issue</span>
-            </Link>
+            </a>
           </div>
         </div>
       </section>

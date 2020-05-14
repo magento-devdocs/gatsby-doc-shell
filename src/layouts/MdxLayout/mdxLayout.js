@@ -50,6 +50,7 @@ const MdxLayout = props => {
       <App
         title={mdx.frontmatter.title}
         slug={mdx.fields.slug}
+        editPath={mdx.fields.editPath}
         currentPageContents={mdx.tableOfContents.items}
         headings={mdx.headings}
       >
@@ -71,6 +72,7 @@ export const pageQuery = graphql`
       }
       fields {
         slug
+        editPath
       }
       tableOfContents(maxDepth: 3)
       headings(depth: h1) {

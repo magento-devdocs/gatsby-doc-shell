@@ -8,12 +8,12 @@ import TableOfContents from "../TableOfContents"
 import defaultStyles from "./content.module.css"
 
 const Content = props => {
-  const { children, title, data } = props
+  const { children, title, data, editPath } = props
 
   return (
     <section className={defaultStyles.root}>
       <div className={defaultStyles.wrap}>
-        <ContentHeader>{title}</ContentHeader>
+        <ContentHeader editPath={editPath}>{title}</ContentHeader>
         <main>{children}</main>
         <ContentFooter />
       </div>

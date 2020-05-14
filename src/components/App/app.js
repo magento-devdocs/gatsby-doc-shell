@@ -24,7 +24,7 @@ const App = props => {
     }
   `)
 
-  const { currentPageContents, title, slug, children, headings } = props
+  const { currentPageContents, title, slug, editPath, children, headings } = props
 
   const siteTitle = title || data.site.siteMetadata.title
 
@@ -36,7 +36,7 @@ const App = props => {
       <GlobalSpectrumProvider size="medium" theme="light">
         <div className={defaultStyles.root}>
           <Header siteTitle={siteTitle} slug={slug} />
-          <Main slug={slug} data={currentPageContents} title={pageTitle}>
+          <Main slug={slug} data={currentPageContents} title={pageTitle} editPath={editPath}>
             {children}
           </Main>
           <Footer />

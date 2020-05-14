@@ -10,7 +10,7 @@ import { useData } from "../Data"
 import Content from "./content"
 
 const Main = props => {
-  const { slug, data, title, children } = props
+  const { slug, data, editPath, title, children } = props
   const { pageGroups } = useData()
 
   const group = getPageGroup(slug, pageGroups)
@@ -37,7 +37,7 @@ const Main = props => {
             <TreeNavigation slug={slug} />
           </div>
         </aside>
-        <Content title={title} data={data}>
+        <Content title={title} data={data} editPath={editPath}>
           {children}
         </Content>
       </div>
