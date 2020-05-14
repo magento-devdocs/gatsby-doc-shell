@@ -65,7 +65,7 @@ const TreeNavigation = props => {
     return (
       <TreeNavigationContext.Provider value={api}>
         <div className={defaultStyles.root}>
-          <Branch pages={group.pages} depth={0} />
+          <Branch currentPage={slug} pages={group.pages} depth={0} />
         </div>
       </TreeNavigationContext.Provider>
     )

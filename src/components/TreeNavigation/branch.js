@@ -7,7 +7,7 @@ import ToggleCollapse from "./toggleCollapse"
 import { TreeNavigationContext } from "./treeNavigation"
 
 const Branch = props => {
-  const { pages, depth, parent } = props
+  const { pages, depth, parent, currentPage } = props
 
   const { openBranches, expand, collapse } = useContext(TreeNavigationContext)
 
@@ -37,6 +37,7 @@ const Branch = props => {
         depth={depth}
         url={url}
         childPages={childPages}
+        currentPage={currentPage}
       />
     )
   })

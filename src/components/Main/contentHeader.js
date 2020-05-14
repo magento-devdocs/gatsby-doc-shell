@@ -21,8 +21,6 @@ const ContentHeader = props => {
 
   const reportUrl = path.join(siteMetadata.githubRepository, "issues/new")
 
-  console.log(editUrl)
-
   const classes = {
     header: `${defaultStyles.header} spectrum-Heading1 spectrum-Heading--XXL`,
     actions: `${defaultStyles.actions} spectrum-ButtonGroup`,
