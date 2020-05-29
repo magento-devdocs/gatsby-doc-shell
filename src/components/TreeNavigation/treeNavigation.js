@@ -19,7 +19,9 @@ const TreeNavigation = props => {
 
   const initialOpen = []
 
-  getPath(group, initialOpen, slug)
+  if (group) {
+    getPath(group, initialOpen, slug)
+  }
 
   const [openBranches, setOpenBranches] = useState(initialOpen)
   const [fullyExpanded, setFullyExpanded] = useState(false)
@@ -32,12 +34,14 @@ const TreeNavigation = props => {
     const newArray = []
 
     const nodeVisitor = node => {
-      newArray.push(node.url)
+      if (node) {
+        newArray.push(node.url)
 
-      if (node.pages) {
-        node.pages.forEach(element => {
-          nodeVisitor(element)
-        })
+        if (node.pages) {
+          node.pages.forEach(element => {
+            nodeVisitor(element)
+          })
+        }
       }
     }
 

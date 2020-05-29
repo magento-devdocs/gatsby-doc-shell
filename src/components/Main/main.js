@@ -15,19 +15,6 @@ const Main = props => {
 
   const group = getPageGroup(slug, pageGroups)
   const groupTitle = group ? group.title : null
-  /*
-          <div className={defaultStyles.content}>
-            <section className={defaultStyles.leftSidebar}>
-              <TreeNavigation slug={slug} />
-            </section>
-            <div className={defaultStyles.topicContent}>
-              <main className={defaultStyles.main}>{children}</main>
-              <section className={defaultStyles.rightSidebar}>
-                <TableOfContents data={currentPageContents} />
-              </section>
-            </div>
-          </div>
-*/
   return (
     <div className={defaultStyles.root}>
       <div className={defaultStyles.container}>
