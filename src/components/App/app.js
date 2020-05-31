@@ -8,6 +8,7 @@ import GlobalSpectrumProvider from "../GlobalSpectrumProvider"
 import Header from "../Header"
 import Main from "../Main"
 import Mask from "../Mask"
+import { QuickSearch } from "../Search"
 
 import AppContextProvider from "./appContextProvider"
 
@@ -53,8 +54,9 @@ const App = props => {
               {children}
             </Main>
             <Footer />
+            <Mask />
+            <QuickSearch />
           </div>
-          <Mask />
         </GlobalSpectrumProvider>
       </DataProvider>
     </AppContextProvider>

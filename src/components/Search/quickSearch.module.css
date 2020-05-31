@@ -1,0 +1,16 @@
+.root {
+  display: none;
+  padding: 6px 20px 0 20px;
+  width: 100%;
+  position: absolute;
+  height: 46px;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.active {
+  composes: root;
+  display: flex;
+}

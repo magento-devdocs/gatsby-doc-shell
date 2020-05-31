@@ -23,6 +23,7 @@
     "@spectrum-css/textfield": "^2.0.2",
     "@spectrum-css/typography": "^2.0.2",
     "@spectrum-css/vars": "^2.0.2",
+    "algoliasearch": "^4.2.0",
     "gatsby": "^2.18.4",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-algolia": "^0.11.0",
@@ -50,6 +51,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-instantsearch-dom": "^6.5.0",
     "remark-grid-tables": "^1.7.1"
   },
   "devDependencies": {
