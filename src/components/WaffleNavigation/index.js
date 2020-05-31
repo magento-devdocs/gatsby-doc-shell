@@ -7,10 +7,16 @@ import "@spectrum-css/popover"
 import "@spectrum-css/link"
 import classes from "./waffleNavigation.module.css"
 
+import { useAppContext } from "../App"
+
 import Apps from "@adobe/spectrum-css-workflow-icons/dist/24/Apps.svg"
 import Search from "@adobe/spectrum-css-workflow-icons/dist/24/Search.svg"
 
 const WaffleNavigation = props => {
+  const [appState, appApi] = useAppContext()
+
+  const { openSearch } = appApi
+
   const { externalPages } = useData()
 
   const [open, setOpen] = useState(false)
@@ -18,10 +24,8 @@ const WaffleNavigation = props => {
     setOpen(prevState => !prevState)
   }, [])
 
-  const [searchOpen, setSearchOpen] = useState(false)
-
   const handleSearchClick = useCallback(() => {
-    setSearchOpen(prevState => !prevState)
+    openSearch()
   })
 
   // Logic for closing modal on external click.
