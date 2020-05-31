@@ -7,11 +7,11 @@ import Footer from "../Footer"
 import GlobalSpectrumProvider from "../GlobalSpectrumProvider"
 import Header from "../Header"
 import Main from "../Main"
-import Search from "../Search"
+import Mask from "../Mask"
+
+import AppContextProvider from "./appContextProvider"
 
 import defaultStyles from "./app.module.css"
-import TreeNavigation from "../TreeNavigation"
-import TableOfContents from "../TableOfContents"
 
 const App = props => {
   const data = useStaticQuery(graphql`
@@ -39,22 +39,25 @@ const App = props => {
   const pageTitle = headerOne ? headerOne.value : title
 
   return (
-    <DataProvider>
-      <GlobalSpectrumProvider size="medium" theme="light">
-        <div className={defaultStyles.root}>
-          <Header siteTitle={siteTitle} slug={slug} />
-          <Main
-            slug={slug}
-            data={currentPageContents}
-            title={pageTitle}
-            editPath={editPath}
-          >
-            {children}
-          </Main>
-          <Footer />
-        </div>
-      </GlobalSpectrumProvider>
-    </DataProvider>
+    <AppContextProvider>
+      <DataProvider>
+        <GlobalSpectrumProvider size="medium" theme="light">
+          <div className={defaultStyles.root}>
+            <Header siteTitle={siteTitle} slug={slug} />
+            <Main
+              slug={slug}
+              data={currentPageContents}
+              title={pageTitle}
+              editPath={editPath}
+            >
+              {children}
+            </Main>
+            <Footer />
+          </div>
+          <Mask />
+        </GlobalSpectrumProvider>
+      </DataProvider>
+    </AppContextProvider>
   )
 }
 
