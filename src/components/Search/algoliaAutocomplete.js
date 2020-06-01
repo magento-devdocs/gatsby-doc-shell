@@ -6,7 +6,7 @@ import { connectAutoComplete } from "react-instantsearch-dom"
 import Magnifier from "@spectrum-css/icon/combined/Magnifier.svg"
 import CrossSmall from "@spectrum-css/icon/combined/CrossSmall.svg"
 
-import AlgoliaResults from './algoliaResults'
+import AlgoliaResults from "./algoliaResults"
 
 const AlgoliaAutocomplete = props => {
   const { hits, currentRefinement, refine } = props
@@ -52,7 +52,7 @@ const AlgoliaAutocomplete = props => {
             aria-hidden="true"
           />
         </button>
-        <AlgoliaResults hits={hits} currentRefinement={currentRefinement}/>
+        <AlgoliaResults hits={hits} currentRefinement={currentRefinement} />
       </div>
     </div>
   )
