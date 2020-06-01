@@ -1,0 +1,18 @@
+.root {
+  list-style-type: none;
+  background-color: #fff;
+  border: 1px solid #9b9b9b;
+  margin-top: 2px;
+  border-radius: 2px;
+  overflow-y: auto;
+  max-height: calc(100vh - 80px);
+  text-align: left;
+}
+
+.listItem {
+}
+
+.link {
+    color: var(--spectrum-body-text-color, var(--spectrum-alias-text-color));
+    text-decoration: none;
+}
