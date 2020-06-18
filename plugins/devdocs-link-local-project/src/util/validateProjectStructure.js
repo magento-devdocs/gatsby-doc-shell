@@ -22,9 +22,12 @@ const validateProjectStructure = config => {
       reject(new Error(`${baseuri} could not be found on the external project`))
     }
 
-    const paths = {
-      markdownDir: path.join(config.baseuri, "src/markdown"),
-      dataDir: path.join(config.baseuri, "src/data"),
+    const paths = fs.existsSync(path.join(baseuri, "docs")) ? {
+      markdownDir: path.join(baseuri, "docs"),
+      dataDir: path.join(baseuri, "data"),
+    } : {
+      markdownDir: path.join(baseuri, "src/markdown"),
+      dataDir: path.join(baseuri, "src/data"),
     }
 
     validatePaths(Array.from(Object.values(paths)))
