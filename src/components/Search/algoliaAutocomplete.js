@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from "react"
+import React, { useRef, useCallback, useEffect } from "react"
 
 import defaultStyles from "./algoliaAutocomplete.module.css"
 import { connectAutoComplete } from "react-instantsearch-dom"
@@ -9,13 +9,19 @@ import CrossSmall from "@spectrum-css/icon/combined/CrossSmall.svg"
 import AlgoliaResults from "./algoliaResults"
 
 const AlgoliaAutocomplete = props => {
-  const { hits, currentRefinement, refine } = props
+  const { hits, currentRefinement, refine, active } = props
 
   const inputElement = useRef(null)
 
   const handleClear = useCallback(() => {
     inputElement.current.value = null
   }, [])
+
+  useEffect(() => {
+    if (active) {
+      inputElement.current.focus()
+    }
+  }, [active])
 
   const changeHandler = event => refine(event.currentTarget.value)
 
@@ -39,6 +45,7 @@ const AlgoliaAutocomplete = props => {
           className={classes.input}
           onChange={changeHandler}
           value={currentRefinement}
+          autocomplete="off"
         />
         <Magnifier
           className={classes.magnifier}

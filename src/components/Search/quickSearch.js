@@ -20,8 +20,10 @@ const QuickSearch = () => {
 
   const { activePanel } = appState
 
+  const active = activePanel === 'search'
+
   const classes =
-    activePanel === "search" ? defaultStyles.active : defaultStyles.root
+    active ? defaultStyles.active : defaultStyles.root
 
   return (
     <div className={classes}>
@@ -29,7 +31,7 @@ const QuickSearch = () => {
         indexName={process.env.GATSBY_ALGOLIA_SITE_INDEX}
         searchClient={searchClient}
       >
-        <Autocomplete />
+        <Autocomplete active={active}/>
       </InstantSearch>
     </div>
   )

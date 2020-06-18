@@ -13,7 +13,7 @@ const AlgoliaResults = props => {
   const results = hits.map(hit => {
     const { title, slug, objectID: id } = hit
 
-    const label = title || "Untitled page"
+    const label = title || id
 
     return (
       <li key={id} className={defaultStyles.listItem}>
