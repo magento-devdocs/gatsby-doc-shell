@@ -1,4 +1,48 @@
 .root {
+  padding: 0.5em 0 0 0;
+  margin: 1.5em 0 0 0;
+  position: -webkit-sticky;
   position: sticky;
-  top: -1px;
+  top: 46px;
+  max-height: calc(100vh - 46px);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  opacity: 0.7;
+}
+
+.root::before {
+  display: block;
+  content: "On this page";
+  color: var(
+    --spectrum-heading-subtitle3-text-color,
+    var(--spectrum-global-color-gray-700)
+  );
+  margin: var(--spectrum-global-dimension-size-75) 0 0 0;
+  padding: 0 var(--spectrum-global-dimension-size-450) 0
+    var(--spectrum-global-dimension-size-150);
+  font-size: var(--spectrum-global-dimension-font-size-50);
+  font-weight: 400;
+  line-height: var(
+    --spectrum-alias-line-height-medium,
+    var(--spectrum-global-dimension-size-250)
+  );
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.list {
+  margin: 0px;
+  position: relative;
+}
+
+.item {
+  font-size: 12px;
+  margin: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  min-height: 16px;
 }

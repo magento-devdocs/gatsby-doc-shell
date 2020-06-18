@@ -1,0 +1,9 @@
+.root {
+
+  width: 200px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  padding: 20px 0 0 20px;
+}

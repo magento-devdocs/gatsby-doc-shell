@@ -1,9 +1,24 @@
 body {
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
+  min-height: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-anchor {
-    margin-left: -26px;
-    margin-right: 10px;
+  margin-left: -26px;
+  margin-right: 10px;
+}
+
+li {
+  padding-left: .1em;
+  margin-bottom: .7em;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }

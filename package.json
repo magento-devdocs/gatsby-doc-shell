@@ -10,6 +10,7 @@
     "@mdx-js/react": "^1.5.1",
     "@spectrum-css/alert": "^2.0.2",
     "@spectrum-css/button": "^2.0.2",
+    "@spectrum-css/buttongroup": "^3.0.0-beta.1",
     "@spectrum-css/icon": "^2.0.2",
     "@spectrum-css/link": "^2.0.2",
     "@spectrum-css/menu": "^2.1.1",

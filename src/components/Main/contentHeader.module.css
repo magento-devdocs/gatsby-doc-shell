@@ -1,0 +1,22 @@
+.root {
+}
+
+.pageIntro {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.header {
+    flex: 1 0 auto;
+    max-width: 100%;
+    margin: 0 0 20px 0;
+}
+
+.actions {
+    min-width: 272px;
+    flex: 1 0 50px;
+    padding: 0 0 1.5em 0;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}

@@ -53,6 +53,15 @@ const DataProvider = props => {
           }
         }
       }
+      site: site {
+        siteMetadata {
+          author
+          description
+          title
+          editPageBaseUrl
+          githubRepository
+        }
+      }
     }
   `)
 

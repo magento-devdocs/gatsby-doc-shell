@@ -1,4 +1,5 @@
 import React from "react"
+import Helmet from "react-helmet"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -21,7 +22,12 @@ import {
 
 import "../global.css"
 
+const HeaderOneOverride = ({ children }) => {
+  return null
+}
+
 const componentsMapping = {
+  h1: HeaderOneOverride,
   table: Table,
   thead: TableHead,
   tr: TableRow,
@@ -37,11 +43,16 @@ const MdxLayout = props => {
   const { mdx } = data
   return (
     <>
+      <Helmet>
+        <link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css" />
+      </Helmet>
       <SEO title={mdx.frontmatter.title} />
       <App
         title={mdx.frontmatter.title}
         slug={mdx.fields.slug}
+        editPath={mdx.fields.editPath}
         currentPageContents={mdx.tableOfContents.items}
+        headings={mdx.headings}
       >
         <MDXProvider components={componentsMapping}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
@@ -61,8 +72,12 @@ export const pageQuery = graphql`
       }
       fields {
         slug
+        editPath
       }
       tableOfContents(maxDepth: 3)
+      headings(depth: h1) {
+        value
+      }
     }
   }
 `
