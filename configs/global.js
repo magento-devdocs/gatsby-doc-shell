@@ -1,7 +1,16 @@
+const path = require("path")
 
-const path = require('path');
+require("dotenv").config({
+  path: `.env`,
+})
 
-const projectRootDir = path.dirname(__dirname);
+const projectRootDir = path.dirname(__dirname)
+
+const editPageBaseUrl = path.join(
+  process.env.GITHUB_REPOSITORY_URL,
+  "edit",
+  process.env.GITHUB_REPOSITORY_BRANCH,
+)
 
 module.exports = {
   pathPrefix: `/gatsby-doc-site`,
@@ -9,6 +18,8 @@ module.exports = {
     title: `DevDocs | Prototype Doc Site`,
     description: `A modern documentation site built on top of Gatsby.`,
     author: `jcalcaben`,
+    githubRepository: process.env.GITHUB_REPOSITORY_URL,
+    editPageBaseUrl: editPageBaseUrl,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

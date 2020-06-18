@@ -8,6 +8,7 @@ import "@spectrum-css/link"
 import classes from "./waffleNavigation.module.css"
 
 import Apps from "@adobe/spectrum-css-workflow-icons/dist/24/Apps.svg"
+import Search from "@adobe/spectrum-css-workflow-icons/dist/24/Search.svg"
 
 const WaffleNavigation = props => {
   const { externalPages } = useData()
@@ -16,6 +17,12 @@ const WaffleNavigation = props => {
   const handleToggle = useCallback(() => {
     setOpen(prevState => !prevState)
   }, [])
+
+  const [searchOpen, setSearchOpen] = useState(false)
+
+  const handleSearchClick = useCallback(() => {
+    setSearchOpen(prevState => !prevState)
+  })
 
   // Logic for closing modal on external click.
   const actionButton = useRef(null)
@@ -79,11 +86,11 @@ const WaffleNavigation = props => {
 
   return (
     <div className={classes.root} ref={actionButton}>
-      <button
-        className="spectrum-ActionButton spectrum-ActionButton--quiet"
-        onClick={handleToggle}
-      >
-        <Apps className="spectrum-Icon" />
+      <button className={classes.toggle} onClick={handleToggle}>
+        <Apps width={24} height={24} className="spectrum-Icon" />
+      </button>
+      <button className={classes.search} onClick={handleSearchClick}>
+        <Search width={24} height={24} className="spectrum-Icon" />
       </button>
       {dropdown}
     </div>

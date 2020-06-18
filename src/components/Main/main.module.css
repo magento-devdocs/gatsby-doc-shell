@@ -1,0 +1,58 @@
+.root {
+  flex: 1;
+  background: #fff;
+}
+
+.container {
+  min-height: 100%;
+}
+
+.leftSidebar {
+  position: fixed;
+  width: 270px;
+  height: 100vh;
+  z-index: 2;
+  background: #f5f5f5;
+  top: 0;
+  padding-top: 46px;
+}
+
+.leftSidebarWrapper {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 5px 10px;
+  padding-bottom: 48px;
+}
+
+.leftSidebarTitle {
+  position: relative;
+  padding: 20px 15px 20px 15px;
+  margin: 0;
+  z-index: 1;
+  color: var(
+    --spectrum-heading-4-text-color,
+    var(--spectrum-alias-heading-text-color)
+  );
+  font-size: var(
+    --spectrum-heading-4-text-size,
+    var(--spectrum-alias-heading4-text-size)
+  );
+  font-weight: var(
+    --spectrum-heading-4-text-font-weight,
+    var(--spectrum-alias-heading-text-font-weight-regular)
+  );
+  line-height: var(
+    --spectrum-heading-4-text-line-height,
+    var(--spectrum-alias-heading-text-line-height)
+  );
+  font-style: var(
+    --spectrum-heading-4-text-font-style,
+    var(--spectrum-global-font-style-regular)
+  );
+  letter-spacing: var(
+    --spectrum-heading-4-text-letter-spacing,
+    var(--spectrum-global-font-letter-spacing-none)
+  );
+  text-transform: var(--spectrum-heading-4-text-transform, none);
+}

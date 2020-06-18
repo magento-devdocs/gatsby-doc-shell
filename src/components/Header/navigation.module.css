@@ -1,0 +1,13 @@
+.root {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transform: translateZ(0);
+  z-index: 1000;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  padding: 0;
+}

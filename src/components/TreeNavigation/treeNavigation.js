@@ -1,20 +1,15 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useState, createContext } from "react"
 
 import { useData } from "../Data"
 import getPageGroup from "../util/getPageGroup"
 
-import defaultClasses from "./treeNavigation.module.css"
+import defaultStyles from "./treeNavigation.module.css"
+import { getPath } from "./util"
 
 import "@spectrum-css/sidenav"
+import Branch from "./branch"
 
-const classes = {
-  list: "spectrum-SideNav spectrum-SideNav--multiLevel",
-  subList: "spectrum-SideNav",
-  listItem: "spectrum-SideNav-item",
-  listItemSelected: "spectrum-SideNav-item is-selected",
-  link: "spectrum-SideNav-itemLink",
-}
+const TreeNavigationContext = createContext()
 
 const TreeNavigation = props => {
   const { slug } = props
@@ -22,41 +17,71 @@ const TreeNavigation = props => {
 
   const group = getPageGroup(slug, pageGroups)
 
+  const initialOpen = []
+
+  if (group) {
+    getPath(group, initialOpen, slug)
+  }
+
+  const [openBranches, setOpenBranches] = useState(initialOpen)
+  const [fullyExpanded, setFullyExpanded] = useState(false)
+
+  const expand = url => {
+    setOpenBranches(openBranches.concat([url]))
+  }
+
+  const expandAll = () => {
+    const newArray = []
+
+    const nodeVisitor = node => {
+      if (node) {
+        newArray.push(node.url)
+
+        if (node.pages) {
+          node.pages.forEach(element => {
+            nodeVisitor(element)
+          })
+        }
+      }
+    }
+
+    nodeVisitor(group)
+
+    setOpenBranches(newArray)
+    setFullyExpanded(true)
+  }
+
+  const collapse = url => {
+    setOpenBranches(openBranches.filter(entry => entry != url))
+  }
+
+  const collapseAll = () => {
+    setOpenBranches([])
+    setFullyExpanded(false)
+  }
+
+  const api = {
+    openBranches: openBranches,
+    fullyExpanded: fullyExpanded,
+    expand: expand,
+    expandAll: expandAll,
+    collapse: collapse,
+    collapseAll: collapseAll,
+  }
+
   if (group) {
     return (
-      <nav className={defaultClasses.root}>
-        <Branch slug={slug} pageTree={group} rootClass={classes.list} />
-      </nav>
+      <TreeNavigationContext.Provider value={api}>
+        <div className={defaultStyles.root}>
+          <Branch currentPage={slug} pages={group.pages} depth={0} />
+        </div>
+      </TreeNavigationContext.Provider>
     )
   }
+
   return null
 }
 
-const Branch = props => {
-  const { slug, pageTree, rootClass } = props
-
-  const listClass = rootClass || classes.subList
-
-  const listItems = pageTree.pages.map(page => {
-    const branch = page.pages ? (
-      <Branch pageTree={page} slug={slug} />
-    ) : (
-      undefined
-    )
-
-    const listItemClass =
-      slug === page.url ? classes.listItemSelected : classes.listItem
-    return (
-      <li key={page.url} className={listItemClass}>
-        <Link className={classes.link} to={page.url}>
-          {page.title}
-        </Link>
-        {branch}
-      </li>
-    )
-  })
-
-  return <ul className={listClass}>{listItems}</ul>
-}
-
 export default TreeNavigation
+
+export { TreeNavigationContext }

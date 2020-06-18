@@ -1,11 +1,12 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-import defaultClasses from "./home.module.css"
+import defaultStyles from "./logo.module.css"
 
-const Home = props => {
+const Logo = props => {
   const { to, title } = props
 
   const data = useStaticQuery(graphql`
@@ -19,18 +20,16 @@ const Home = props => {
       }
     }
   `)
-
   return (
-    <div className={defaultClasses.root}>
-      <Link className={defaultClasses.link} to={to}>
-        <Img
-          className={defaultClasses.image}
-          fluid={data.placeholderImage.childImageSharp.fluid}
-        />
-      </Link>
-      <div className={defaultClasses.siteName}>{title}</div>
-    </div>
+    <Link to={to} className={defaultStyles.root}>
+      <Img
+        className={defaultStyles.image}
+        fluid={data.placeholderImage.childImageSharp.fluid}
+      />
+      <span className={defaultStyles.siteText}>Magento</span>
+      <span className={defaultStyles.productText}>DevDocs</span>
+    </Link>
   )
 }
 
-export default Home
+export default Logo

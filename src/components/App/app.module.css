@@ -1,9 +1,4 @@
 .root {
-  display: grid;
-  grid-template-columns: [sidebar] minmax(250px, 300px) [gap] minmax(30px, 50px) [main] auto;
-  grid-template-rows: [primary] auto [footer] auto;
-  background-color: #ffffff;
-  max-width: 1940px;
 }
 
 .leftSidebar {

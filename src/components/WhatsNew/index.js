@@ -57,8 +57,6 @@ const WhatsNew = props => {
     return null
   })
 
-  console.log(data)
-
   return (
     <div>
       <h2>What's new?</h2>
