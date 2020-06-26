@@ -71,6 +71,12 @@ const DataProvider = props => {
           url
         }
       }
+      backgroundImages: allFile(filter: { base: { regex: "/.*-bg.jpg/" } }) {
+        nodes {
+          base
+          publicURL
+        }
+      }
     }
   `)
 
