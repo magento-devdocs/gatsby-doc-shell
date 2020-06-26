@@ -13,8 +13,8 @@ const Intro = props => {
   return (
     <section className={classes.root}>
       <div className={classes.content}>
-        <h1 className={classes.heading}>Title</h1>
-        <p className={classes.subtitle}>Component subtitle</p>
+        <h1 className={classes.heading}>{title}</h1>
+        <p className={classes.subtitle}>{subtitle}</p>
       </div>
     </section>
   )

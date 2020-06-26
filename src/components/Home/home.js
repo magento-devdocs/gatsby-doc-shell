@@ -1,16 +1,18 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Intro from "./intro"
+import LinkCards from "./linkCards"
+
+import { useData } from "../Data"
 
 const Home = props => {
+  const { homeConfiguration } = useData()
+
+  const { title, subtitle, links } = homeConfiguration
   return (
     <>
-      <Intro />
-      <h1>Gatsby Documentation Site</h1>
-      <p>Welcome to the Gatsby documentation site</p>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}></div>
-      <Link to="/page-2/">Go to page 2</Link>
+      <Intro title={title} subtitle={subtitle} />
+      <LinkCards cardsData={links} />
     </>
   )
 }

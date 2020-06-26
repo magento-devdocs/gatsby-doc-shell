@@ -62,6 +62,15 @@ const DataProvider = props => {
           githubRepository
         }
       }
+      homeConfiguration: configurationYaml(name: { eq: "Home" }) {
+        subtitle
+        title
+        links {
+          description
+          title
+          url
+        }
+      }
     }
   `)
 
