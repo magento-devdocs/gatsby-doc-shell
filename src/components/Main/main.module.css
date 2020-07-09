@@ -1,6 +1,7 @@
 .root {
   flex: 1;
   background: #fff;
+  min-height: calc(100vh - 131px);
 }
 
 .container {

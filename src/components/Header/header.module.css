@@ -1,4 +1,4 @@
 .root {
   display: block;
-  padding-top: 48px;
+  padding-top: var(--header-top-padding);
 }

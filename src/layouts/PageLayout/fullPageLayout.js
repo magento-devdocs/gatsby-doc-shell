@@ -12,7 +12,7 @@ const FullPageLayout = props => {
     return (
         <>
         <SEO title={title} />
-        <App title={title} slug={slug}>
+        <App title={title} slug={slug} layout="full">
             {children}
         </App>
         </>

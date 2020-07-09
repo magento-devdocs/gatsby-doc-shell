@@ -1,15 +1,15 @@
 .root {
-    margin-left: 270px;
+    margin: var(--footer-margin);
     padding: 20px 40px;
     z-index: 3;
-    background-color: #fff;
+    background-color: var(--background-color);
 }
 .container {
     position: relative;
     display: flex;
     max-width: 100%;
     padding: 10px 0 0 0;
-    border-top: 2px solid var(--spectrum-tabs-rule-color, var(--spectrum-global-color-gray-200));
+    border-top:  var(--footer-top-border);
     margin: 0 auto;
 
 }

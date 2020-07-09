@@ -24,19 +24,23 @@ const App = props => {
     }
   `)
 
-  const {
-    title,
-    slug,
-    children,
-  } = props
+  const { title, slug, layout, children } = props
 
   const siteTitle = title || data.site.siteMetadata.title
+
+  const styles = {
+    ...defaultStyles,
+    root:
+      layout === "markdown"
+        ? defaultStyles.rootMarkdown
+        : defaultStyles.rootFull,
+  }
 
   return (
     <AppContextProvider>
       <DataProvider>
         <GlobalSpectrumProvider size="medium" theme="light">
-          <div className={defaultStyles.root}>
+          <div className={styles.root}>
             <Header siteTitle={siteTitle} slug={slug} />
             {children}
             <Footer />

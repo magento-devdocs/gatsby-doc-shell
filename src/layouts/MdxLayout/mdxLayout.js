@@ -57,7 +57,7 @@ const MdxLayout = props => {
         <link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css" />
       </Helmet>
       <SEO title={title} />
-      <App title={title} slug={slug}>
+      <App title={title} slug={slug} layout="markdown">
         <Main
           slug={slug}
           data={tableOfContents.items}

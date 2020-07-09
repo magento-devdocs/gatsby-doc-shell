@@ -1,4 +1,23 @@
 .root {
+  min-height: 100vh;
+}
+
+.rootMarkdown {
+  composes: root;
+  --background-color: #ffffff;
+  --footer-margin: 0px 0px 0px 270px;
+  --footer-top-border: 2px solid var(--spectrum-tabs-rule-color, var(--spectrum-global-color-gray-200));
+  --header-top-padding: 48px;
+  --header-nav-position: fixed;
+
+}
+
+.rootFull {
+  composes: root;
+  --background-color: var(--spectrum-alias-background-color-default, var(--spectrum-global-color-gray-100));
+  --footer-margin: 0px;
+  --header-top-padding: 0px;
+  --header-nav-position: relative;
 }
 
 .leftSidebar {
