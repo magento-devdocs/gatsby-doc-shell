@@ -7,6 +7,7 @@ import { MDXProvider } from "@mdx-js/react"
 
 import App from "../../components/App"
 import SEO from "../../components/seo"
+import Main from "../../components/Main"
 
 import Callout from "../../doc-components/Callout"
 import Variable from "../../doc-components/Variable"
@@ -41,22 +42,32 @@ const componentsMapping = {
 const MdxLayout = props => {
   const { data } = props
   const { mdx } = data
+  const { fields, frontMatter, headings, body, tableOfContents } = mdx
+
+  const title = frontMatter ? frontMatter.title : ""
+
+  const { slug, editPath } = fields
+
+  const headerOne = headings ? headings[0] : null
+  const pageTitle = headerOne ? headerOne.value : title
+
   return (
     <>
       <Helmet>
         <link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css" />
       </Helmet>
-      <SEO title={mdx.frontmatter.title} />
-      <App
-        title={mdx.frontmatter.title}
-        slug={mdx.fields.slug}
-        editPath={mdx.fields.editPath}
-        currentPageContents={mdx.tableOfContents.items}
-        headings={mdx.headings}
-      >
-        <MDXProvider components={componentsMapping}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </MDXProvider>
+      <SEO title={title} />
+      <App title={title} slug={slug}>
+        <Main
+          slug={slug}
+          data={tableOfContents.items}
+          title={pageTitle}
+          editPath={editPath}
+        >
+          <MDXProvider components={componentsMapping}>
+            <MDXRenderer>{body}</MDXRenderer>
+          </MDXProvider>
+        </Main>
       </App>
     </>
   )

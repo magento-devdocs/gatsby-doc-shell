@@ -6,7 +6,6 @@ import { DataProvider } from "../Data"
 import Footer from "../Footer"
 import GlobalSpectrumProvider from "../GlobalSpectrumProvider"
 import Header from "../Header"
-import Main from "../Main"
 import Mask from "../Mask"
 import { QuickSearch } from "../Search"
 
@@ -26,18 +25,12 @@ const App = props => {
   `)
 
   const {
-    currentPageContents,
     title,
     slug,
-    editPath,
     children,
-    headings,
   } = props
 
   const siteTitle = title || data.site.siteMetadata.title
-
-  const headerOne = headings ? headings[0] : null
-  const pageTitle = headerOne ? headerOne.value : title
 
   return (
     <AppContextProvider>
@@ -45,14 +38,7 @@ const App = props => {
         <GlobalSpectrumProvider size="medium" theme="light">
           <div className={defaultStyles.root}>
             <Header siteTitle={siteTitle} slug={slug} />
-            <Main
-              slug={slug}
-              data={currentPageContents}
-              title={pageTitle}
-              editPath={editPath}
-            >
-              {children}
-            </Main>
+            {children}
             <Footer />
             <Mask />
             <QuickSearch />
